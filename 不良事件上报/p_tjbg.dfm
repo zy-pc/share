@@ -1,0 +1,230 @@
+object frm_tjbg: Tfrm_tjbg
+  Left = 0
+  Top = 0
+  Caption = #25552#20132#20107#20214#25253#21578
+  ClientHeight = 292
+  ClientWidth = 397
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 397
+    Height = 292
+    Align = alClient
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 113
+      Top = 31
+      Width = 189
+      Height = 20
+      Caption = #26159#21542#23558#35813#25253#21578#25552#20132#33267
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = #23435#20307
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 113
+      Top = 126
+      Width = 62
+      Height = 19
+      Caption = #20154'  '#21592
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = #23435#20307
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 113
+      Top = 169
+      Width = 188
+      Height = 15
+      Caption = #27880':'#36755#20837#20195#30721#25110#25340#38899#31616#30721#26597#25214
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -15
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 113
+      Top = 89
+      Width = 62
+      Height = 19
+      Caption = #31185'  '#23460
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = #23435#20307
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object ComboBox1: TComboBox
+      Left = 181
+      Top = 88
+      Width = 121
+      Height = 25
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -14
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ItemHeight = 17
+      ParentFont = False
+      TabOrder = 0
+      OnExit = ComboBox1Exit
+      OnKeyPress = ComboBox1KeyPress
+    end
+    object Button1: TButton
+      Left = 142
+      Top = 236
+      Width = 73
+      Height = 33
+      Caption = #25552'    '#20132
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 267
+      Top = 236
+      Width = 73
+      Height = 33
+      Caption = #36864'    '#20986
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      OnClick = Button2Click
+    end
+    object Edit1: TEdit
+      Left = 181
+      Top = 123
+      Width = 121
+      Height = 25
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -14
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      OnExit = Edit1Exit
+      OnKeyPress = Edit1KeyPress
+    end
+    object DBGrid1: TDBGrid
+      Left = 45
+      Top = 55
+      Width = 256
+      Height = 175
+      DataSource = ds_xz
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -14
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      Visible = False
+      OnDblClick = DBGrid1DblClick
+      OnKeyPress = DBGrid1KeyPress
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'mc'
+          Title.Alignment = taCenter
+          Title.Caption = #21517#31216
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -14
+          Title.Font.Name = 'Tahoma'
+          Title.Font.Style = []
+          Width = 104
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'dm'
+          Title.Alignment = taCenter
+          Title.Caption = #20195#30721
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -14
+          Title.Font.Name = 'Tahoma'
+          Title.Font.Style = []
+          Width = 112
+          Visible = True
+        end>
+    end
+  end
+  object ADODataSet1: TADODataSet
+    Connection = DM_data.ado_mydata
+    Parameters = <>
+    Left = 104
+    Top = 104
+  end
+  object qry_temp: TADOQuery
+    Connection = DM_data.ado_mydata
+    Parameters = <>
+    Left = 24
+    Top = 96
+  end
+  object qry_xz: TADOQuery
+    Connection = DM_data.ado_mydata
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select  *  from  sys_czy where 1=2')
+    Left = 32
+    Top = 16
+    object qry_xzmc: TStringField
+      FieldName = 'mc'
+      Size = 10
+    end
+    object qry_xzdm: TStringField
+      FieldName = 'dm'
+      FixedChar = True
+      Size = 4
+    end
+  end
+  object ds_xz: TDataSource
+    DataSet = qry_xz
+    Left = 79
+    Top = 16
+  end
+  object qry_pub: TADOQuery
+    Connection = DM_data.ado_mydata
+    Parameters = <>
+    Left = 48
+    Top = 136
+  end
+end

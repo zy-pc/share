@@ -1,0 +1,1298 @@
+object frm_byzlcx: Tfrm_byzlcx
+  Left = 299
+  Top = 152
+  BorderIcons = [biSystemMenu, biMaximize]
+  BorderStyle = bsSingle
+  Caption = #30149#21592#36164#26009#26597#35810
+  ClientHeight = 552
+  ClientWidth = 994
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -15
+  Font.Name = #23435#20307
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 15
+  object pnl_byzl: TPanel
+    Left = 0
+    Top = 65
+    Width = 994
+    Height = 487
+    Align = alClient
+    BevelInner = bvLowered
+    TabOrder = 1
+    OnExit = pnl_byzlExit
+    object Panel1: TPanel
+      Left = 2
+      Top = 2
+      Width = 990
+      Height = 72
+      Align = alTop
+      BevelInner = bvLowered
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 8
+        Top = 14
+        Width = 30
+        Height = 15
+        Caption = #21345#21495
+      end
+      object Label2: TLabel
+        Left = 192
+        Top = 14
+        Width = 30
+        Height = 15
+        Caption = #22995#21517
+      end
+      object Label3: TLabel
+        Left = 320
+        Top = 14
+        Width = 30
+        Height = 15
+        Caption = #24615#21035
+      end
+      object Label4: TLabel
+        Left = 416
+        Top = 14
+        Width = 30
+        Height = 15
+        Caption = #24180#40836
+      end
+      object Label5: TLabel
+        Left = 529
+        Top = 14
+        Width = 30
+        Height = 15
+        Caption = #20303#22336
+      end
+      object Label6: TLabel
+        Left = 8
+        Top = 43
+        Width = 60
+        Height = 15
+        Caption = #20027#35201#35786#26029
+      end
+      object Label7: TLabel
+        Left = 416
+        Top = 43
+        Width = 60
+        Height = 15
+        Caption = #27425#35201#35786#26029
+      end
+      object e_brxm: TDBEdit
+        Left = 224
+        Top = 10
+        Width = 88
+        Height = 23
+        DataField = 'brxm'
+        DataSource = ds_byzd
+        ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object e_xb: TDBEdit
+        Left = 351
+        Top = 10
+        Width = 58
+        Height = 23
+        DataField = 'brxb'
+        DataSource = ds_byzd
+        ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object e_nl: TDBEdit
+        Left = 448
+        Top = 10
+        Width = 78
+        Height = 23
+        DataField = 'brnl'
+        DataSource = ds_byzd
+        ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object e_jtzz: TDBEdit
+        Left = 562
+        Top = 10
+        Width = 396
+        Height = 23
+        DataField = 'jtzz'
+        DataSource = ds_byzd
+        ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+        ReadOnly = True
+        TabOrder = 4
+      end
+      object e_tmh: TDBEdit
+        Left = 40
+        Top = 10
+        Width = 146
+        Height = 23
+        DataField = 'tmh'
+        DataSource = ds_byzd
+        ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object b_bj: TBitBtn
+        Left = 805
+        Top = 35
+        Width = 73
+        Height = 30
+        Caption = #32534#36753
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 5
+        Visible = False
+        OnClick = b_bjClick
+      end
+      object b_bc: TBitBtn
+        Left = 885
+        Top = 35
+        Width = 73
+        Height = 30
+        Caption = #20445#23384
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 6
+        Visible = False
+        OnClick = b_bcClick
+      end
+      object e_cyzd: TEdit
+        Left = 482
+        Top = 39
+        Width = 300
+        Height = 23
+        ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+        TabOrder = 9
+      end
+      object zyzd: TEdit
+        Left = 70
+        Top = 39
+        Width = 94
+        Height = 23
+        Enabled = False
+        ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+        TabOrder = 7
+        OnExit = zyzdExit
+        OnKeyPress = zyzdKeyPress
+      end
+      object e_zyzd: TEdit
+        Left = 170
+        Top = 39
+        Width = 240
+        Height = 23
+        ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+        TabOrder = 8
+        OnKeyPress = e_zyzdKeyPress
+      end
+    end
+    object webbrowser1: TWebBrowser
+      Left = -22
+      Top = 81
+      Width = 846
+      Height = 462
+      Align = alCustom
+      TabOrder = 2
+      ControlData = {
+        4C00000070570000C02F00000000000000000000000000000000000000000000
+        000000004C000000000000000000000001000000E0D057007335CF11AE690800
+        2B2E126208000000000000004C0000000114020000000000C000000000000046
+        8000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000100000000000000000000000000000000000000}
+    end
+    object DBGrid_Jb: TDBGrid
+      Left = 75
+      Top = 65
+      Width = 430
+      Height = 235
+      ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ReadOnly = True
+      TabOrder = 1
+      TitleFont.Charset = ANSI_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -15
+      TitleFont.Name = #23435#20307
+      TitleFont.Style = []
+      Visible = False
+      OnDblClick = DBGrid_JbDblClick
+      OnExit = DBGrid_JbExit
+      OnKeyPress = DBGrid_JbKeyPress
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'JBMC'
+          Title.Caption = #30142#30149#21517#31216
+          Width = 282
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'JBBM'
+          Title.Caption = 'ICD10'#32534#30721
+          Width = 100
+          Visible = True
+        end>
+    end
+  end
+  object pnl_list: TPanel
+    Left = 0
+    Top = 65
+    Width = 994
+    Height = 487
+    Align = alClient
+    BevelInner = bvLowered
+    TabOrder = 3
+    object cxGrid3: TcxGrid
+      Left = 2
+      Top = 2
+      Width = 990
+      Height = 483
+      Align = alClient
+      TabOrder = 0
+      object cxGrid3DBTableView1: TcxGridDBTableView
+        OnDblClick = cxGrid3DBTableView1DblClick
+        OnKeyPress = cxGrid3DBTableView1KeyPress
+        NavigatorButtons.ConfirmDelete = False
+        DataController.DataSource = ds_zlxx
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <
+          item
+            Kind = skCount
+            FieldName = 'brxm'
+            Column = cxGrid3DBTableView1brxm
+          end>
+        DataController.Summary.SummaryGroups = <>
+        OptionsData.CancelOnExit = False
+        OptionsData.Deleting = False
+        OptionsData.DeletingConfirmation = False
+        OptionsData.Editing = False
+        OptionsData.Inserting = False
+        OptionsSelection.CellMultiSelect = True
+        OptionsView.Footer = True
+        Styles.StyleSheet = GridTableViewStyleSheetDevExpress
+        object cxGrid3DBTableView1iscrb: TcxGridDBColumn
+          Caption = #20256#26579
+          DataBinding.FieldName = 'iscrb'
+          PropertiesClassName = 'TcxCheckBoxProperties'
+          HeaderAlignmentHorz = taCenter
+          Width = 36
+        end
+        object cxGrid3DBTableView1czysmc: TcxGridDBColumn
+          Caption = #21307#29983#21517#31216
+          DataBinding.FieldName = 'czysmc'
+          Visible = False
+          GroupIndex = 0
+          HeaderAlignmentHorz = taCenter
+          Width = 100
+        end
+        object cxGrid3DBTableView1tmh: TcxGridDBColumn
+          Caption = #30149#21592#32534#21495
+          DataBinding.FieldName = 'tmh'
+          HeaderAlignmentHorz = taCenter
+        end
+        object cxGrid3DBTableView1brxm: TcxGridDBColumn
+          Caption = #30149#21592#22995#21517
+          DataBinding.FieldName = 'brxm'
+          HeaderAlignmentHorz = taCenter
+          Width = 100
+        end
+        object cxGrid3DBTableView1brnl: TcxGridDBColumn
+          Caption = #24180#40836
+          DataBinding.FieldName = 'brnl'
+          HeaderAlignmentHorz = taCenter
+          Width = 60
+        end
+        object cxGrid3DBTableView1brxb: TcxGridDBColumn
+          Caption = #24615#21035
+          DataBinding.FieldName = 'brxb'
+          HeaderAlignmentHorz = taCenter
+          Width = 60
+        end
+        object cxGrid3DBTableView1zdrq: TcxGridDBColumn
+          Caption = #26085#26399
+          DataBinding.FieldName = 'zdrq'
+          HeaderAlignmentHorz = taCenter
+          Options.Filtering = False
+          Width = 130
+        end
+        object cxGrid3DBTableView1jtzz: TcxGridDBColumn
+          Caption = #23478#24237#22320#22336
+          DataBinding.FieldName = 'jtzz'
+          HeaderAlignmentHorz = taCenter
+          Options.Filtering = False
+          Width = 132
+        end
+        object cxGrid3DBTableView1zyzd: TcxGridDBColumn
+          Caption = #35786#26029#20195#30721
+          DataBinding.FieldName = 'zyzd'
+          HeaderAlignmentHorz = taCenter
+          Options.Filtering = False
+        end
+        object cxGrid3DBTableView1zyzdmc: TcxGridDBColumn
+          Caption = #20027#35201#35786#26029
+          DataBinding.FieldName = 'zyzdmc'
+          HeaderAlignmentHorz = taCenter
+          Options.Filtering = False
+          Width = 134
+        end
+        object cxGrid3DBTableView1yszd: TcxGridDBColumn
+          Caption = #27425#35201#35786#26029
+          DataBinding.FieldName = 'yszd'
+          HeaderAlignmentHorz = taCenter
+          Options.Filtering = False
+          Width = 120
+        end
+        object cxGrid3DBTableView1zybz: TcxGridDBColumn
+          Caption = #35777#22411#35786#26029
+          DataBinding.FieldName = 'zybz'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Filtering = False
+          Width = 146
+        end
+        object cxGrid3DBTableView1ysct: TcxGridDBColumn
+          Caption = #26597#20307
+          DataBinding.FieldName = 'ysct'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Filtering = False
+          Width = 164
+        end
+      end
+      object cxGrid3Level1: TcxGridLevel
+        GridView = cxGrid3DBTableView1
+      end
+    end
+  end
+  object pnl1: TPanel
+    Left = 0
+    Top = 0
+    Width = 994
+    Height = 41
+    Align = alTop
+    BevelInner = bvLowered
+    TabOrder = 0
+    object lbl1: TLabel
+      Left = 409
+      Top = 13
+      Width = 90
+      Height = 15
+      Caption = #26465#30721#21495#25110#22995#21517
+    end
+    object lbl2: TLabel
+      Left = 22
+      Top = 13
+      Width = 60
+      Height = 15
+      Caption = #24320#22987#26085#26399
+    end
+    object lbl3: TLabel
+      Left = 241
+      Top = 13
+      Width = 15
+      Height = 15
+      Caption = #21040
+    end
+    object edt_tmh: TEdit
+      Left = 504
+      Top = 9
+      Width = 164
+      Height = 23
+      ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+      TabOrder = 5
+    end
+    object dtp_ksrq: TDateTimePicker
+      Left = 86
+      Top = 9
+      Width = 136
+      Height = 23
+      Date = 40350.593749363420000000
+      Time = 40350.593749363420000000
+      ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+      TabOrder = 3
+    end
+    object dtp_jsrq: TDateTimePicker
+      Left = 266
+      Top = 9
+      Width = 136
+      Height = 23
+      Date = 40350.593942974530000000
+      Time = 40350.593942974530000000
+      ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+      TabOrder = 4
+    end
+    object BitBtn1: TBitBtn
+      Left = 676
+      Top = 6
+      Width = 73
+      Height = 30
+      Caption = #26597#35810
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = BitBtn1Click
+    end
+    object BitBtn3: TBitBtn
+      Left = 765
+      Top = 6
+      Width = 73
+      Height = 30
+      Caption = #25171#21360#30149#21382
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = BitBtn3Click
+    end
+    object BitBtn2: TBitBtn
+      Left = 852
+      Top = 6
+      Width = 73
+      Height = 30
+      Caption = #36864#20986
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      OnClick = BitBtn2Click
+    end
+  end
+  object ts1: TTabSet
+    Left = 0
+    Top = 41
+    Width = 994
+    Height = 24
+    Align = alTop
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = #23435#20307
+    Font.Style = []
+    Tabs.Strings = (
+      #30149#21592#21015#34920
+      #30149#21592#36164#26009)
+    TabIndex = 0
+    TabPosition = tpTop
+    OnChange = ts1Change
+  end
+  object ds_byzl: TDataSource
+    DataSet = ad_cx_bl
+    Left = 168
+    Top = 224
+  end
+  object sp_cx_zlxx: TADOStoredProc
+    Connection = DM_data.ado_mydata
+    CursorType = ctStatic
+    LockType = ltBatchOptimistic
+    AfterOpen = sp_cx_zlxxAfterOpen
+    ProcedureName = 'dzbl_cx_zlrq;1'
+    Parameters = <
+      item
+        Name = '@RETURN_VALUE'
+        DataType = ftInteger
+        Direction = pdReturnValue
+        Precision = 10
+        Value = 0
+      end>
+    Left = 96
+    Top = 248
+    object sp_cx_zlxxid: TIntegerField
+      FieldName = 'id'
+      ReadOnly = True
+    end
+    object sp_cx_zlxxtmh: TStringField
+      FieldName = 'tmh'
+      ReadOnly = True
+      FixedChar = True
+      Size = 12
+    end
+    object sp_cx_zlxxzdrq: TDateTimeField
+      FieldName = 'zdrq'
+      ReadOnly = True
+    end
+    object sp_cx_zlxxczys: TStringField
+      FieldName = 'czys'
+      ReadOnly = True
+      FixedChar = True
+      Size = 4
+    end
+    object sp_cx_zlxxczysmc: TStringField
+      FieldName = 'czysmc'
+      ReadOnly = True
+      Size = 10
+    end
+    object sp_cx_zlxxczks: TStringField
+      FieldName = 'czks'
+      ReadOnly = True
+      FixedChar = True
+      Size = 4
+    end
+    object sp_cx_zlxxbrxm: TStringField
+      FieldName = 'brxm'
+      ReadOnly = True
+    end
+    object sp_cx_zlxxbrnl: TStringField
+      FieldName = 'brnl'
+      ReadOnly = True
+      Size = 50
+    end
+    object sp_cx_zlxxbrxb: TStringField
+      FieldName = 'brxb'
+      ReadOnly = True
+      Size = 4
+    end
+    object sp_cx_zlxxjtzz: TStringField
+      FieldName = 'jtzz'
+      ReadOnly = True
+      Size = 100
+    end
+    object sp_cx_zlxxyszd: TMemoField
+      FieldName = 'yszd'
+      ReadOnly = True
+      BlobType = ftMemo
+    end
+    object sp_cx_zlxxzyzd: TStringField
+      FieldName = 'zyzd'
+      ReadOnly = True
+      Size = 10
+    end
+    object sp_cx_zlxxzyzdmc: TStringField
+      FieldName = 'zyzdmc'
+      ReadOnly = True
+      Size = 100
+    end
+    object sp_cx_zlxxiscrb: TBooleanField
+      FieldName = 'iscrb'
+      ReadOnly = True
+    end
+    object sp_cx_zlxxysct: TMemoField
+      FieldName = 'ysct'
+      ReadOnly = True
+      BlobType = ftMemo
+    end
+    object sp_cx_zlxxzybz: TStringField
+      FieldName = 'zybz'
+      ReadOnly = True
+      Size = 100
+    end
+  end
+  object ds_zlxx: TDataSource
+    DataSet = sp_cx_zlxx
+    Left = 112
+    Top = 264
+  end
+  object ad_cx_bl: TADODataSet
+    Connection = DM_data.ado_mydata
+    CommandText = 'select id,bl from dzbl_brbl_all where tmh=:tmh and zdrq=:zlrq'
+    Parameters = <
+      item
+        Name = 'tmh'
+        DataType = ftString
+        NumericScale = 255
+        Precision = 255
+        Size = 12
+        Value = Null
+      end
+      item
+        Name = 'zlrq'
+        Attributes = [paNullable]
+        DataType = ftDateTime
+        NumericScale = 3
+        Precision = 23
+        Size = 16
+        Value = Null
+      end>
+    Left = 144
+    Top = 200
+  end
+  object cxStyleRepository1: TcxStyleRepository
+    object cxStyle1: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = 15451300
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = #23435#20307
+      Font.Style = []
+    end
+    object cxStyle2: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = 15451300
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = #23435#20307
+      Font.Style = []
+    end
+    object cxStyle3: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12937777
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = #23435#20307
+      Font.Style = [fsBold]
+      TextColor = clWhite
+    end
+    object cxStyle4: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 16247513
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -15
+      Font.Name = #23435#20307
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle5: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 16247513
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #23435#20307
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle6: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 16247513
+      TextColor = clBlack
+    end
+    object cxStyle7: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14811135
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #23435#20307
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle8: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14811135
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clNavy
+    end
+    object cxStyle9: TcxStyle
+      AssignedValues = [svColor]
+      Color = 14872561
+    end
+    object cxStyle10: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 4707838
+      TextColor = clBlack
+    end
+    object cxStyle11: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12937777
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clWhite
+    end
+    object cxStyle12: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = 15451300
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #23435#20307
+      Font.Style = []
+    end
+    object cxStyle13: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 4707838
+      TextColor = clBlack
+    end
+    object cxStyle14: TcxStyle
+      AssignedValues = [svColor, svFont]
+      Color = 15451300
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = #23435#20307
+      Font.Style = []
+    end
+    object cxStyle15: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14811135
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -13
+      Font.Name = #23435#20307
+      Font.Style = [fsBold]
+      TextColor = clNavy
+    end
+    object cxStyle16: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12937777
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #23435#20307
+      Font.Style = []
+      TextColor = clWhite
+    end
+    object cxStyle17: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14213320
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle18: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 12107912
+      TextColor = clBlack
+    end
+    object cxStyle19: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 14213320
+      TextColor = clBlack
+    end
+    object cxStyle20: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12107912
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle21: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 8949832
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clSilver
+    end
+    object cxStyle22: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 4673068
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clWhite
+    end
+    object cxStyle23: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12107912
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object cxStyle24: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 6053956
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clWhite
+    end
+    object cxStyle25: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12107912
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object cxStyle26: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14213320
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clNavy
+    end
+    object cxStyle27: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 6053956
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clWhite
+    end
+    object cxStyle28: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12107912
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object cxStyle29: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14213320
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle30: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 12107912
+      TextColor = clBlack
+    end
+    object cxStyle31: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14213320
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = #23435#20307
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle32: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12107912
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle33: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 8949832
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clSilver
+    end
+    object cxStyle34: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 4673068
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clWhite
+    end
+    object cxStyle35: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12107912
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object cxStyle36: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 6053956
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clWhite
+    end
+    object cxStyle37: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12107912
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object cxStyle38: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14213320
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clNavy
+    end
+    object cxStyle39: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 4112833
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      TextColor = clWhite
+    end
+    object cxStyle40: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle41: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 9234160
+      TextColor = clBlack
+    end
+    object cxStyle42: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 11788021
+      TextColor = clBlack
+    end
+    object cxStyle43: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 9157775
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle44: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 11193702
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle45: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 5737262
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial Black'
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle46: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 9157775
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      TextColor = clBlack
+    end
+    object cxStyle47: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 5736750
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      TextColor = clWhite
+    end
+    object cxStyle48: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 9157775
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle49: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      TextColor = clBlue
+    end
+    object cxStyle50: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 4615972
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      TextColor = clWhite
+    end
+    object cxStyle51: TcxStyle
+      AssignedValues = [svColor]
+      Color = 15451300
+    end
+    object cxStyle52: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 16247513
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      TextColor = clBlack
+    end
+    object cxStyle53: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 16247513
+      TextColor = clBlack
+    end
+    object cxStyle54: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 16247513
+      TextColor = clBlack
+    end
+    object cxStyle55: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 14811135
+      TextColor = clBlack
+    end
+    object cxStyle56: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14811135
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clNavy
+    end
+    object cxStyle57: TcxStyle
+      AssignedValues = [svColor]
+      Color = 14872561
+    end
+    object cxStyle58: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 4707838
+      TextColor = clBlack
+    end
+    object cxStyle59: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 12937777
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clWhite
+    end
+    object cxStyle60: TcxStyle
+      AssignedValues = [svColor]
+      Color = 15451300
+    end
+    object cxStyle61: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 4707838
+      TextColor = clBlack
+    end
+    object cxStyle62: TcxStyle
+      AssignedValues = [svColor]
+      Color = 15451300
+    end
+    object cxStyle63: TcxStyle
+      AssignedValues = [svColor, svFont, svTextColor]
+      Color = 14811135
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      TextColor = clNavy
+    end
+    object cxStyle64: TcxStyle
+      AssignedValues = [svColor, svTextColor]
+      Color = 12937777
+      TextColor = clWhite
+    end
+    object GridBandedTableViewStyleSheetDevExpress: TcxGridBandedTableViewStyleSheet
+      Caption = 'DevExpress'
+      Styles.Background = cxStyle1
+      Styles.Content = cxStyle4
+      Styles.ContentEven = cxStyle5
+      Styles.ContentOdd = cxStyle6
+      Styles.FilterBox = cxStyle7
+      Styles.Inactive = cxStyle12
+      Styles.IncSearch = cxStyle13
+      Styles.Selection = cxStyle16
+      Styles.Footer = cxStyle8
+      Styles.Group = cxStyle9
+      Styles.GroupByBox = cxStyle10
+      Styles.Header = cxStyle11
+      Styles.Indicator = cxStyle14
+      Styles.Preview = cxStyle15
+      Styles.BandBackground = cxStyle2
+      Styles.BandHeader = cxStyle3
+      BuiltIn = True
+    end
+    object GridBandedTableViewStyleSheetMarinehighcolor: TcxGridBandedTableViewStyleSheet
+      Caption = 'Marine (high color)'
+      Styles.Content = cxStyle29
+      Styles.ContentEven = cxStyle30
+      Styles.ContentOdd = cxStyle31
+      Styles.Inactive = cxStyle36
+      Styles.Selection = cxStyle39
+      Styles.Footer = cxStyle32
+      Styles.Group = cxStyle33
+      Styles.GroupByBox = cxStyle34
+      Styles.Header = cxStyle35
+      Styles.Indicator = cxStyle37
+      Styles.Preview = cxStyle38
+      Styles.BandHeader = cxStyle28
+      BuiltIn = True
+    end
+    object GridTableViewStyleSheetDevExpress: TcxGridTableViewStyleSheet
+      Caption = 'DevExpress'
+      Styles.Background = cxStyle51
+      Styles.Content = cxStyle52
+      Styles.ContentEven = cxStyle53
+      Styles.ContentOdd = cxStyle54
+      Styles.FilterBox = cxStyle55
+      Styles.Inactive = cxStyle60
+      Styles.IncSearch = cxStyle61
+      Styles.Selection = cxStyle64
+      Styles.Footer = cxStyle56
+      Styles.Group = cxStyle57
+      Styles.GroupByBox = cxStyle58
+      Styles.Header = cxStyle59
+      Styles.Indicator = cxStyle62
+      Styles.Preview = cxStyle63
+      BuiltIn = True
+    end
+  end
+  object ad_jbcx: TADODataSet
+    Connection = DM_data.ado_mydata
+    CursorType = ctStatic
+    LockType = ltReadOnly
+    CommandText = 
+      'select * from icd10 where (jbmc like :jbmc or pybm like :pym or ' +
+      'jbbm like :jbbm) and charindex('#39'>'#39',jbbm)=0 order by jbbm'
+    Parameters = <
+      item
+        Name = 'jbmc'
+        Attributes = [paNullable]
+        DataType = ftString
+        NumericScale = 255
+        Precision = 255
+        Size = 200
+        Value = 'bdxgm'
+      end
+      item
+        Name = 'pym'
+        Attributes = [paNullable]
+        DataType = ftWideString
+        NumericScale = 255
+        Precision = 255
+        Size = 45
+        Value = 'bdxgm'
+      end
+      item
+        Name = 'jbbm'
+        DataType = ftString
+        NumericScale = 255
+        Precision = 255
+        Size = 8
+        Value = Null
+      end>
+    Left = 648
+    Top = 337
+  end
+  object ds_jbbm: TDataSource
+    DataSet = ad_jbcx
+    Left = 648
+    Top = 377
+  end
+  object ad_cx_zd: TADODataSet
+    Connection = DM_data.ado_mydata
+    LockType = ltBatchOptimistic
+    AfterOpen = ad_cx_zdAfterOpen
+    CommandText = 
+      'declare @tmh varchar(12),@zlrq varchar(19)'#13#10'select @tmh=:tmh,@zl' +
+      'rq=:zlrq'#13#10'if exists(select 1 from dzbl_brbl_last where tmh=@tmh ' +
+      'and convert(char(19),zdrq,120)=@zlrq)'#13#10'begin'#13#10'  select * from dz' +
+      'bl_brbl_last where tmh=@tmh and convert(char(19),zdrq,120)=@zlrq' +
+      #13#10'end'#13#10'else'#13#10'begin'#13#10'  select * from dzbl_brbl where tmh=@tmh and' +
+      ' convert(char(19),zdrq,120)=@zlrq'#13#10'end'
+    Parameters = <
+      item
+        Name = 'tmh'
+        Size = -1
+        Value = Null
+      end
+      item
+        Name = 'zlrq'
+        Size = -1
+        Value = Null
+      end>
+    Left = 248
+    Top = 264
+  end
+  object ds_byzd: TDataSource
+    DataSet = ad_cx_zd
+    Left = 272
+    Top = 288
+  end
+end

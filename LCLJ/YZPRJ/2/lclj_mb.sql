@@ -1,0 +1,41 @@
+CREATE TABLE lclj_blmbdx(
+	[ztid] [int] primary key IDENTITY(1,1) NOT NULL,
+	[bqdm] [varchar](30) NULL,
+	[ksdm] [varchar](30) NULL,
+	[ysdm] [char](30) NULL,
+	[ztmc] [varchar](50) NOT NULL,
+	[czy] [varchar](4) NULL,
+	[mzbz] [bit] NOT NULL,
+	[zybz] [bit] NOT NULL,
+	[mblb] [varchar](10) NULL,
+	[bqmc] [varchar](20) NULL,
+	[ksmc] [varchar](20) NULL
+) 
+
+CREATE TABLE lclj_blmbmx(
+	[id] [int] primary key identity(1,1),
+	[ztid] [int] NOT NULL,
+	[yzsx] [varchar](4) NOT NULL,
+	[lb] [varchar](4) NOT NULL,
+	[xmdm] [varchar](14) NOT NULL,
+	[xmmc] [varchar](100) NOT NULL,
+	[ypyf] [varchar](4) NULL,
+	[ypyl] [varchar](10) NULL,
+	[yldw] [varchar](10) NULL,
+	[dw] [varchar](10) NULL,
+	[sl] [int] NULL,
+	[yytj] [varchar](8) NULL,
+	[czks] [varchar](4) NULL,
+	[kdks] [varchar](4) NULL,
+	[yplb] [varchar](10) NULL,
+	[gg] [varchar](50) NULL,
+	[yplsj] [numeric](18, 4) NULL,
+	[ypbzbl] [int] NULL,
+	[bz] [varchar](100) NULL,
+	[jyyb] [varchar](10) NULL,
+	[jyflbh] [varchar](20) NULL,
+	[ypdwid] [int] NULL,
+	[fzbz] [varchar](20) NULL,
+	[syfzbh] [varchar](20) NULL,
+	[yzsxb] [varchar](4) NULL
+) 

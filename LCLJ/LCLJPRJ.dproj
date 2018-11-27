@@ -1,0 +1,156 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{adc2b241-b3f3-48b1-ae93-5799bed8c0c4}</ProjectGuid>
+    <MainSource>LCLJPRJ.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>LCLJPRJ.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""> <Delphi.Personality>   <Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">1</VersionInfo>
+      <VersionInfo Name="MinorVer">0</VersionInfo>
+      <VersionInfo Name="Release">0</VersionInfo>
+      <VersionInfo Name="Build">0</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">2052</VersionInfo>
+      <VersionInfo Name="CodePage">936</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName"></VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription"></VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <Source>
+      <Source Name="MainSource">LCLJPRJ.dpr</Source>
+    </Source>
+  </Delphi.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="LCLJPRJ.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\public\CustomOBJBaseClass.pas" />
+    <DCCReference Include="..\public\p_dm.pas">
+      <Form>DM_data</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\public\p_func.pas">
+      <Form>Frm_func</Form>
+    </DCCReference>
+    <DCCReference Include="..\public\P_login.pas">
+      <Form>Frm_login</Form>
+    </DCCReference>
+    <DCCReference Include="..\public\p_obj.pas" />
+    <DCCReference Include="..\public\SCSX_Const.pas" />
+    <DCCReference Include="..\Share\p_pub_sj.pas" />
+    <DCCReference Include="..\Share\P_TreeView.pas" />
+    <DCCReference Include="..\Share\p_tzysf.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\p_cqyzxzdy.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\p_jcsqd.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\p_jyxmwrite_zy.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\p_lsyzxzdy.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\p_xbs.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\p_xgyl.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\p_xzyf.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\p_xz_fyyf.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\p_yzinput_xse.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\p_zxdxd.pas" />
+    <DCCReference Include="..\Share\ysgzzshare\P_zyyzmbmc.pas" />
+    <DCCReference Include="..\Share\zdybb\p_zdybb_mb.pas">
+      <Form>frm_zdybb_mb</Form>
+    </DCCReference>
+    <DCCReference Include="..\Share\zyysgzz\p_tzyzsj.pas" />
+    <DCCReference Include="..\Share\zyyzedit\p_bylsyz.pas" />
+    <DCCReference Include="..\Share\zyyzedit\p_dslr.pas" />
+    <DCCReference Include="..\Share\zyyzedit\p_fzsm.pas" />
+    <DCCReference Include="..\Share\zyyzedit\p_tjyz.pas" />
+    <DCCReference Include="..\Share\zyyzedit\P_TreeView_ctwh.pas" />
+    <DCCReference Include="..\Share\zyyzedit\P_TreeView_ctxz.pas">
+      <Form>by  add</Form>
+    </DCCReference>
+    <DCCReference Include="..\Share\zyyzedit\p_xgyzzxsj.pas" />
+    <DCCReference Include="..\Share\zyyzedit\p_yzfz.pas" />
+    <DCCReference Include="..\Share\zyyzedit\p_yzinput.pas" />
+    <DCCReference Include="..\Share\zyyzedit\p_yzzt.pas" />
+    <DCCReference Include="..\Share\合理用药\PassInterfaceClass.pas" />
+    <DCCReference Include="..\Share\合理用药\p_PassDllClare.pas" />
+    <DCCReference Include="..\Share\手术麻醉\p_bqgl_sssq.pas">
+      <Form>frm_sssq</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_BMSelect.pas">
+      <Form>Frm_BMSelect</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_LCLJBZSZ.pas">
+      <Form>Frm_LCLJBZSZ</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_LCLJDRPG.pas">
+      <Form>frm_LCLJDRPG</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_LCLJJD.pas">
+      <Form>Frm_LCLJJD</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_LCLJSJ.pas">
+      <Form>Frm_LCLJSJ</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_LCLJSJMX.pas">
+      <Form>frm_LCLJSJBX</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_LCLJXBJ.pas">
+      <Form>frm_LCLJBJ</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_LCLJXMEDIT.pas" />
+    <DCCReference Include="PAS\P_LCLJZDGL.pas">
+      <Form>Frm_ZDGL</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_LCLJZDGL_ADD.pas">
+      <Form>Frm_ZDGL_ADD</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_MAIN.pas">
+      <Form>frm_Main</Form>
+    </DCCReference>
+    <DCCReference Include="PAS\P_Public.pas" />
+    <DCCReference Include="PAS\P_TreeNodeSel.pas">
+      <Form>Frm_TreeNodeSel</Form>
+    </DCCReference>
+    <None Include="ModelSupport_LCLJPRJ\default.txaPackage" />
+    <None Include="ModelSupport_LCLJPRJ\default.txvpck" />
+    <None Include="ModelSupport_LCLJPRJ\LCLJPRJ\default.txvpck" />
+    <None Include="ModelSupport_LCLJPRJ\P_LCLJDRPG\default.txvpck" />
+    <None Include="ModelSupport_LCLJPRJ\P_LCLJSJMX\default.txvpck" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2013-08-02 11:02:22.401.pas,C:\Users\Charles\Documents\RAD Studio\Projects\Unit2.pas=E:\公司代码\病案\费用归类\Unit2.pas</Transaction>
+    <Transaction>2013-08-02 11:02:22.401.dfm,C:\Users\Charles\Documents\RAD Studio\Projects\Unit2.dfm=E:\公司代码\病案\费用归类\Unit2.dfm</Transaction>
+    <Transaction>2013-08-02 11:02:31.943.pas,C:\Users\Charles\Documents\RAD Studio\Projects\Unit1.pas=E:\公司代码\病案\费用归类\Unit1.pas</Transaction>
+    <Transaction>2013-08-02 11:02:31.943.dfm,C:\Users\Charles\Documents\RAD Studio\Projects\Unit1.dfm=E:\公司代码\病案\费用归类\Unit1.dfm</Transaction>
+    <Transaction>2013-08-02 11:02:45.202.bdsproj,C:\Users\Charles\Documents\RAD Studio\Projects\Project1.bdsproj=E:\公司代码\病案\费用归类\Project1.bdsproj</Transaction>
+    <Transaction>2013-08-02 11:53:10.205.pas,E:\公司代码\Share\P_balrkjm.pas=</Transaction>
+    <Transaction>2013-08-02 11:53:10.205.dfm,E:\公司代码\Share\P_balrkjm.dfm=</Transaction>
+    <Transaction>2013-08-02 11:53:10.215.pas,E:\公司代码\Share\p_bqgl_bqxmsr.pas=</Transaction>
+    <Transaction>2013-08-02 11:53:10.215.dfm,E:\公司代码\Share\p_bqgl_bqxmsr.dfm=</Transaction>
+    <Transaction>2013-08-02 11:53:10.226.pas,E:\公司代码\Share\p_bqgl_bqyssr.pas=</Transaction>
+    <Transaction>2013-08-02 11:53:10.226.dfm,E:\公司代码\Share\p_bqgl_bqyssr.dfm=</Transaction>
+    <Transaction>2013-08-02 11:53:10.237.pas,E:\公司代码\Share\p_bqgl_cfhj.pas=</Transaction>
+    <Transaction>2013-08-02 11:53:10.237.dfm,E:\公司代码\Share\p_bqgl_cfhj.dfm=</Transaction>
+    <Transaction>2013-08-02 11:53:10.248.pas,E:\公司代码\Share\p_bqgl_clhj.pas=</Transaction>
+    <Transaction>2013-08-02 11:53:10.248.dfm,E:\公司代码\Share\p_bqgl_clhj.dfm=</Transaction>
+    <Transaction>2013-08-02 11:53:10.260.pas,E:\公司代码\Share\p_bqgl_cydycfhj.pas=</Transaction>
+    <Transaction>2013-08-02 11:53:10.260.dfm,E:\公司代码\Share\p_bqgl_cydycfhj.dfm=</Transaction>
+    <Transaction>2013-08-02 11:53:10.272.pas,E:\公司代码\Share\p_bqgl_ssapcx.pas=</Transaction>
+    <Transaction>2013-08-02 11:53:10.272.dfm,E:\公司代码\Share\p_bqgl_ssapcx.dfm=</Transaction>
+    <Transaction>2013-08-02 11:53:10.282.pas,E:\公司代码\Share\p_bqgl_sssq.pas=</Transaction>
+    <Transaction>2013-08-02 11:53:10.282.dfm,E:\公司代码\Share\p_bqgl_sssq.dfm=</Transaction>
+    <Transaction>2013-08-02 12:04:06.808.pas,E:\公司代码\public\CustomOBJBaseClass.pas=</Transaction>
+    <Transaction>2013-08-02 12:04:12.040.pas,E:\公司代码\public\P_flash.pas=</Transaction>
+    <Transaction>2013-08-02 12:04:12.040.dfm,E:\公司代码\public\P_flash.dfm=</Transaction>
+    <Transaction>2013-08-02 12:04:17.906.pas,E:\公司代码\public\p_help_html.pas=</Transaction>
+    <Transaction>2013-08-02 12:04:17.906.dfm,E:\公司代码\public\p_help_html.dfm=</Transaction>
+    <Transaction>2013-08-02 12:04:17.915.pas,E:\公司代码\public\P_login.pas=</Transaction>
+    <Transaction>2013-08-02 12:04:17.915.dfm,E:\公司代码\public\P_login.dfm=</Transaction>
+    <Transaction>2013-08-02 12:04:17.920.pas,E:\公司代码\public\p_model.pas=</Transaction>
+    <Transaction>2013-08-02 12:04:17.920.dfm,E:\公司代码\public\p_model.dfm=</Transaction>
+    <Transaction>2013-08-02 12:04:17.922.pas,E:\公司代码\public\p_obj.pas=</Transaction>
+    <Transaction>2013-08-02 12:04:17.928.pas,E:\公司代码\public\p_sysado.pas=</Transaction>
+    <Transaction>2013-08-02 12:04:17.928.dfm,E:\公司代码\public\p_sysado.dfm=</Transaction>
+    <Transaction>2013-08-02 12:04:17.929.pas,E:\公司代码\public\SCSX_Const.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

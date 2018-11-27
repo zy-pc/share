@@ -1,0 +1,651 @@
+object frm_jyxmwrite_zy: Tfrm_jyxmwrite_zy
+  Left = 290
+  Top = 167
+  Caption = #26816#39564#39033#30446#36755#20837
+  ClientHeight = 501
+  ClientWidth = 1227
+  Color = clBtnFace
+  Font.Charset = GB2312_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = #23435#20307
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  WindowState = wsMaximized
+  OnActivate = FormActivate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 16
+  object ProgressBar1: TProgressBar
+    Left = 0
+    Top = 484
+    Width = 1227
+    Height = 17
+    Align = alBottom
+    Step = 1
+    TabOrder = 2
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 0
+    Width = 1227
+    Height = 484
+    ActivePage = TabSheet2
+    Align = alClient
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = #36755#20837#26041#24335#19968
+      object Panel2: TPanel
+        Left = 305
+        Top = 0
+        Width = 914
+        Height = 452
+        Align = alClient
+        Caption = 'Panel2'
+        TabOrder = 0
+        object DBGridEh1: TDBGridEh
+          Left = 1
+          Top = 1
+          Width = 912
+          Height = 450
+          Align = alClient
+          AllowedOperations = []
+          DataGrouping.GroupLevels = <>
+          DataSource = ds_sfxm
+          Flat = False
+          FooterColor = clWindow
+          FooterFont.Charset = GB2312_CHARSET
+          FooterFont.Color = clWindowText
+          FooterFont.Height = -16
+          FooterFont.Name = #23435#20307
+          FooterFont.Style = []
+          ImeName = #20013#25991'('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          ReadOnly = True
+          RowDetailPanel.Color = clBtnFace
+          TabOrder = 0
+          TitleFont.Charset = GB2312_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -16
+          TitleFont.Name = #23435#20307
+          TitleFont.Style = []
+          OnDblClick = DBGridEh1DblClick
+          OnKeyPress = DBGridEh1KeyPress
+          Columns = <
+            item
+              EditButtons = <>
+              FieldName = 'xmdm'
+              Footers = <>
+              Title.Alignment = taCenter
+              Title.Caption = #20195#30721
+              Width = 67
+            end
+            item
+              EditButtons = <>
+              FieldName = 'xmmc'
+              Footers = <>
+              Title.Alignment = taCenter
+              Title.Caption = #39033#30446#21517#31216
+              Width = 191
+            end
+            item
+              EditButtons = <>
+              FieldName = 'pym'
+              Footers = <>
+            end>
+          object RowDetailData: TRowDetailPanelControlEh
+          end
+        end
+      end
+      object Panel1: TPanel
+        Left = 0
+        Top = 0
+        Width = 305
+        Height = 452
+        Align = alLeft
+        Caption = 'Panel1'
+        TabOrder = 1
+        object sfxmtreeview: TTreeView
+          Left = 1
+          Top = 1
+          Width = 303
+          Height = 450
+          Align = alClient
+          Images = ImageList1
+          Indent = 19
+          TabOrder = 0
+          OnChange = sfxmtreeviewChange
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = #36755#20837#26041#24335'2'
+      ImageIndex = 1
+      object Panel3: TPanel
+        Left = 1089
+        Top = 0
+        Width = 130
+        Height = 452
+        Align = alClient
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        object Panel4: TPanel
+          Left = 1
+          Top = 1
+          Width = 128
+          Height = 450
+          Align = alClient
+          Caption = 'Panel4'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          object Panel8: TPanel
+            Left = 1
+            Top = 1
+            Width = 126
+            Height = 41
+            Align = alTop
+            Caption = #24050#36873#25321#39033#30446
+            TabOrder = 0
+          end
+          object DBGridEh2: TDBGridEh
+            Left = 1
+            Top = 42
+            Width = 126
+            Height = 407
+            Align = alClient
+            DataGrouping.GroupLevels = <>
+            DataSource = ds_cx_xmdm
+            Flat = False
+            FooterColor = clWindow
+            FooterFont.Charset = GB2312_CHARSET
+            FooterFont.Color = clMaroon
+            FooterFont.Height = -15
+            FooterFont.Name = #23435#20307
+            FooterFont.Style = []
+            ImeName = #20013#25991'('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+            RowDetailPanel.Color = clBtnFace
+            TabOrder = 1
+            TitleFont.Charset = GB2312_CHARSET
+            TitleFont.Color = clMaroon
+            TitleFont.Height = -15
+            TitleFont.Name = #23435#20307
+            TitleFont.Style = []
+            Columns = <
+              item
+                EditButtons = <>
+                FieldName = 'xmdm'
+                Footers = <>
+                MinWidth = 66
+                Title.Caption = #39033#30446#20195#30721
+                Width = 66
+              end
+              item
+                EditButtons = <>
+                FieldName = 'xmmc'
+                Footers = <>
+                MinWidth = 150
+                Title.Caption = #39033#30446#21517#31216
+                Width = 150
+              end>
+            object RowDetailData: TRowDetailPanelControlEh
+            end
+          end
+        end
+      end
+      object TreeView2: TTreeView
+        Left = 0
+        Top = 0
+        Width = 385
+        Height = 452
+        Align = alLeft
+        Images = ImageList1
+        Indent = 27
+        ReadOnly = True
+        RowSelect = True
+        TabOrder = 0
+        OnChange = TreeView2Change
+      end
+      object clb: TCheckListBox
+        Left = 385
+        Top = 0
+        Width = 704
+        Height = 452
+        OnClickCheck = clbClickCheck
+        Align = alLeft
+        BevelInner = bvLowered
+        Columns = 3
+        ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+        ItemHeight = 21
+        Style = lbOwnerDrawFixed
+        TabOrder = 2
+        OnDrawItem = clbDrawItem
+      end
+    end
+    object TabSheetInputMode3: TTabSheet
+      Caption = #36755#20837#26041#24335'3'
+      ImageIndex = 3
+      object pnl1: TPanel
+        Left = 0
+        Top = 0
+        Width = 305
+        Height = 452
+        Align = alLeft
+        Caption = 'Panel1'
+        TabOrder = 0
+        object sfxmOrdertreeview: TTreeView
+          Left = 1
+          Top = 1
+          Width = 303
+          Height = 450
+          Align = alClient
+          Images = ImageList1
+          Indent = 19
+          TabOrder = 0
+          OnChange = sfxmOrdertreeviewChange
+        end
+      end
+      object pnl2: TPanel
+        Left = 305
+        Top = 0
+        Width = 914
+        Height = 452
+        Align = alClient
+        Caption = 'Panel2'
+        TabOrder = 1
+        object chklst_yzxmpx: TCheckListBox
+          Left = 1
+          Top = 1
+          Width = 912
+          Height = 450
+          OnClickCheck = chklst_yzxmpxClickCheck
+          Align = alClient
+          BevelInner = bvLowered
+          Columns = 3
+          ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+          ItemHeight = 21
+          Style = lbOwnerDrawFixed
+          TabOrder = 0
+          OnDrawItem = chklst_yzxmpxDrawItem
+        end
+      end
+    end
+    object ts_wswxmsrfs: TTabSheet
+      Caption = #24494#29983#29289#39033#30446#36755#20837#26041#24335
+      ImageIndex = 2
+      object tv_wswxm: TTreeView
+        Left = 0
+        Top = 0
+        Width = 385
+        Height = 452
+        Align = alLeft
+        Images = ImageList1
+        Indent = 27
+        ReadOnly = True
+        RowSelect = True
+        TabOrder = 0
+        OnChange = tv_wswxmChange
+      end
+      object clb_wswxm: TCheckListBox
+        Left = 385
+        Top = 0
+        Width = 704
+        Height = 452
+        OnClickCheck = clb_wswxmClickCheck
+        Align = alLeft
+        BevelInner = bvLowered
+        Columns = 3
+        ImeName = #20013#25991' - QQ'#25340#38899#36755#20837#27861
+        ItemHeight = 21
+        Style = lbOwnerDrawFixed
+        TabOrder = 1
+        OnDrawItem = clb_wswxmDrawItem
+      end
+      object pnl1_wswxm: TPanel
+        Left = 1089
+        Top = 0
+        Width = 130
+        Height = 452
+        Align = alClient
+        Font.Charset = GB2312_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -40
+        Font.Name = #23435#20307
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        object pnl2_wswxm: TPanel
+          Left = 1
+          Top = 1
+          Width = 128
+          Height = 450
+          Align = alClient
+          Caption = 'Panel4'
+          Font.Charset = GB2312_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -15
+          Font.Name = #23435#20307
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          object pnl3_wswxm: TPanel
+            Left = 1
+            Top = 1
+            Width = 126
+            Height = 41
+            Align = alTop
+            Caption = #24050#36873#25321#39033#30446
+            TabOrder = 0
+          end
+          object DBGridEh_wswxm: TDBGridEh
+            Left = 1
+            Top = 42
+            Width = 126
+            Height = 407
+            Align = alClient
+            DataGrouping.GroupLevels = <>
+            DataSource = ds_cx_xmdm
+            Flat = False
+            FooterColor = clWindow
+            FooterFont.Charset = GB2312_CHARSET
+            FooterFont.Color = clMaroon
+            FooterFont.Height = -15
+            FooterFont.Name = #23435#20307
+            FooterFont.Style = []
+            ImeName = #20013#25991'('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+            RowDetailPanel.Color = clBtnFace
+            TabOrder = 1
+            TitleFont.Charset = GB2312_CHARSET
+            TitleFont.Color = clMaroon
+            TitleFont.Height = -15
+            TitleFont.Name = #23435#20307
+            TitleFont.Style = []
+            Columns = <
+              item
+                EditButtons = <>
+                FieldName = 'xmdm'
+                Footers = <>
+                MinWidth = 66
+                Title.Caption = #39033#30446#20195#30721
+                Width = 66
+              end
+              item
+                EditButtons = <>
+                FieldName = 'xmmc'
+                Footers = <>
+                MinWidth = 150
+                Title.Caption = #39033#30446#21517#31216
+                Width = 150
+              end>
+            object RowDetailData: TRowDetailPanelControlEh
+            end
+          end
+        end
+      end
+    end
+  end
+  object cxLabel1: TcxLabel
+    Left = 310
+    Top = 482
+    Caption = #25968#25454#20934#22791#36827#24230'(0%)'
+    ParentFont = False
+    Properties.Alignment.Horz = taCenter
+    Properties.Alignment.Vert = taVCenter
+    Style.Font.Charset = ANSI_CHARSET
+    Style.Font.Color = clLime
+    Style.Font.Height = -15
+    Style.Font.Name = #23435#20307
+    Style.Font.Style = []
+    Style.TextColor = clFuchsia
+    Style.TransparentBorder = False
+    Style.IsFontAssigned = True
+    StyleHot.BorderStyle = ebsNone
+    Transparent = True
+  end
+  object BitBtn1: TBitBtn
+    Left = 729
+    Top = 2
+    Width = 75
+    Height = 25
+    Caption = #30830#35748
+    TabOrder = 3
+    OnClick = BitBtn1Click
+  end
+  object ad_sfxm: TADODataSet
+    Connection = DM_data.ado_mydata
+    CursorType = ctStatic
+    CommandText = 
+      'select dm,mc,a.pym,xmdm,xmmc,mcjx,dldm,xsbz,sx,yb from sys_yzdl ' +
+      'a, sys_yzxm b where dm=dldm and dldm  like :vdldm and b.zybz=1 o' +
+      'rder by dldm,xsxh,xmmc'
+    Parameters = <
+      item
+        Name = 'vdldm'
+        DataType = ftString
+        NumericScale = 255
+        Precision = 255
+        Size = 10
+        Value = Null
+      end>
+    Left = 184
+    Top = 104
+  end
+  object ad_sfdl: TADODataSet
+    Connection = DM_data.ado_mydata
+    Parameters = <>
+    Left = 328
+    Top = 55
+  end
+  object ds_sfxm: TDataSource
+    DataSet = ad_sfxm
+    Left = 168
+    Top = 80
+  end
+  object ImageList1: TImageList
+    Left = 114
+    Top = 10
+    Bitmap = {
+      494C010102000400840010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000001000000001002000000000000010
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000001010
+      1000313131000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000009494000094
+      9400009494000094940000949400009494000094940000949400009494000094
+      940000949400009494000000000000000000000000000094940063CECE0063CE
+      CE0063CECE0063CECE0063CECE0063CECE0063CECE0063CECE0063CECE0063CE
+      CE0063CECE0063CECE0063CECE00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000949400F7F7
+      F70094CEFF0094FFFF0094CEFF0094FFFF0094CEFF0094CEFF0094CEFF0094CE
+      FF0063CECE000094940000000000000000000000000000949400CEFFFF0094CE
+      FF0094FFFF0094CEFF0094FFFF0094CEFF0094FFFF0094CEFF0094FFFF0094CE
+      FF0094CEFF0094CEFF0063CECE00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000949400F7F7F70094FF
+      FF0094FFFF0094CEFF0094FFFF0094CEFF0094FFFF0094CEFF0094CEFF0094CE
+      FF0063CECE000000000000949400000000000000000000949400CEFFFF0094FF
+      FF0094FFFF0094FFFF0094CEFF0094FFFF0094CEFF0094FFFF0094CEFF0094FF
+      FF0094CEFF0094CEFF0063CECE00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000949400F7F7F70094FF
+      FF0094FFFF0094FFFF0094FFFF0094FFFF0094CEFF0094FFFF0094CEFF0094CE
+      FF000094940000000000009494000000000000000000219C9C00CEFFFF0094FF
+      FF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094CEFF0094FFFF0094CE
+      FF0094FFFF0094CEFF0063CECE00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000949400F7F7F70094FFFF0094FF
+      FF0094FFFF0094FFFF0094CEFF0094FFFF0094FFFF0094CEFF0094FFFF0063CE
+      CE000000000063CECE0063CECE00000000000000000039ADAD00CEFFFF0094FF
+      FF0094FFFF0094FFFF0094FFFF0094FFFF0094CEFF0094FFFF0094CEFF0094FF
+      FF0094CEFF0094FFFF0063CECE00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000949400F7F7F70094FFFF0094FF
+      FF0094FFFF0094FFFF0094FFFF0094FFFF0094CEFF0094FFFF0094CEFF0063CE
+      CE000000000063CECE0063CECE0000000000000000005AB5B500CEFFFF0094FF
+      FF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094CE
+      FF0094FFFF0094CEFF0063CECE00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000094940000949400009494000094
+      9400009494000094940000949400009494000094940000949400009494000094
+      940063CECE0094FFFF0063CECE00000000000000000000949400CEFFFF0094FF
+      FF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094CEFF0094FF
+      FF0094CEFF0094FFFF0063CECE00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000949400F7F7F70094FF
+      FF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094FF
+      FF0094FFFF0094FFFF0063CECE00000000000000000000949400CEFFFF0094FF
+      FF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094FF
+      FF0094FFFF0094CEFF0063CECE00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000949400F7F7F70094FF
+      FF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF0094FFFF00F7F7F700F7F7
+      F700F7F7F700F7F7F70063CECE00000000000000000000949400CEFFFF00CEFF
+      FF00CEFFFF00CEFFFF00CEFFFF00CEFFFF00CEFFFF00CEFFFF00CEFFFF00CEFF
+      FF00CEFFFF0094FFFF0063CECE00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000949400F7F7F70094FF
+      FF0094FFFF0094FFFF0094FFFF0094FFFF00F7F7F70000949400009494000094
+      940000949400009494000094940000000000000000000094940063CECE0063CE
+      CE0063CECE0063CECE0063CECE0063CECE0063CECE0000949400009494000094
+      9400009494000094940000949400000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000949400F7F7
+      F700F7F7F700F7F7F700F7F7F700F7F7F7000094940000000000000000000000
+      000000000000000000000000000000000000000000000000000000949400EFEF
+      EF00CEFFFF00CEFFFF0094FFFF0094FFFF000094940000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000094
+      9400009494000094940000949400009494000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000094
+      9400009494000094940000949400009494000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000424D3E000000000000003E000000
+      2800000040000000100000000100010000000000800000000000000000000000
+      000000000000000000000000FFFFFF00FFFFFFFF00000000FFFFFFFF00000000
+      E000C00000000000C000800000000000C0008000000000008000800000000000
+      8000800000000000000080000000000000008000000000000000800000000000
+      800080000000000080008000000000008001800100000000C07FC03F00000000
+      E0FFE07F00000000FFFFFFFF0000000000000000000000000000000000000000
+      000000000000}
+  end
+  object ad_cyjc: TADODataSet
+    Connection = DM_data.ado_mydata
+    CommandText = 
+      'select * from sys_jyxm_fzdl a,sys_jyxm_fzmx b where dm=dldm  and' +
+      ' xzxm=1 order by dldm,sx,fymc'#13#10
+    Parameters = <>
+    Left = 464
+    Top = 224
+  end
+  object ds_cx_xmdm: TDataSource
+    DataSet = qry_cx_xmdm
+    Left = 848
+    Top = 200
+  end
+  object qry_cx_xmdm: TADOQuery
+    Connection = DM_data.ado_mydata
+    LockType = ltBatchOptimistic
+    Parameters = <>
+    Left = 856
+    Top = 240
+  end
+  object ad_swswxm: TADODataSet
+    Connection = DM_data.ado_mydata
+    CommandText = 'select ybmc from sys_jyyb'
+    Parameters = <>
+    Left = 106
+    Top = 75
+  end
+  object ad_yzxmpx: TADODataSet
+    Connection = DM_data.ado_mydata
+    CursorType = ctStatic
+    CommandText = 
+      'select dm,mc,a.pym,xmdm,xmmc,mcjx,dldm,xsbz,sx,yb from sys_yzdl ' +
+      'a, sys_yzxm b where dm=dldm and dldm  like :vdldm and b.zybz=1 o' +
+      'rder by dldm,xsxh,xmmc'
+    Parameters = <
+      item
+        Name = 'vdldm'
+        DataType = ftString
+        NumericScale = 255
+        Precision = 255
+        Size = 10
+        Value = Null
+      end>
+    Left = 376
+    Top = 184
+  end
+  object DS_ypxmpx: TDataSource
+    DataSet = ad_yzxmpx
+    Left = 336
+    Top = 208
+  end
+end

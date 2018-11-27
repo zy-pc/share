@@ -1,0 +1,49 @@
+object frm_printerset_mobi_his: Tfrm_printerset_mobi_his
+  Left = 0
+  Top = 0
+  Caption = #25171#21360#26426#36873#25321
+  ClientHeight = 206
+  ClientWidth = 339
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 19
+  object ComboBox1: TComboBox
+    Left = 40
+    Top = 32
+    Width = 273
+    Height = 41
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ItemHeight = 0
+    ParentFont = False
+    TabOrder = 0
+  end
+  object BitBtn1: TBitBtn
+    Left = 144
+    Top = 120
+    Width = 75
+    Height = 25
+    Caption = #30830#23450
+    TabOrder = 1
+    OnClick = BitBtn1Click
+  end
+  object BitBtn2: TBitBtn
+    Left = 238
+    Top = 120
+    Width = 75
+    Height = 25
+    Caption = #25918#24323
+    TabOrder = 2
+    OnClick = BitBtn2Click
+  end
+end

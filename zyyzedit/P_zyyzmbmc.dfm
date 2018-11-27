@@ -1,0 +1,61 @@
+object frm_zyyzmbmc: Tfrm_zyyzmbmc
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  Caption = #35831#36755#20837#27169#26495#21517#31216
+  ClientHeight = 206
+  ClientWidth = 339
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = #23435#20307
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 16
+  object Label1: TLabel
+    Left = 64
+    Top = 40
+    Width = 144
+    Height = 16
+    Caption = #35831#36755#20837#21307#22065#27169#26495#21517#31216
+  end
+  object edit_mbmc: TEdit
+    Left = 64
+    Top = 73
+    Width = 217
+    Height = 24
+    TabOrder = 0
+  end
+  object b_ok: TBitBtn
+    Left = 64
+    Top = 136
+    Width = 75
+    Height = 25
+    Caption = #30830#23450
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = #23435#20307
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = b_okClick
+  end
+  object b_close: TBitBtn
+    Left = 176
+    Top = 136
+    Width = 75
+    Height = 25
+    Caption = #36864#20986
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = #23435#20307
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = b_closeClick
+  end
+end

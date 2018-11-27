@@ -1,0 +1,529 @@
+unit p_tjbg;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, DB, ADODB, ExtCtrls, Grids, DBGrids;
+
+type
+  Tfrm_tjbg = class(TForm)
+    ADODataSet1: TADODataSet;
+    Panel1: TPanel;
+    qry_temp: TADOQuery;
+    qry_xz: TADOQuery;
+    qry_xzmc: TStringField;
+    qry_xzdm: TStringField;
+    ds_xz: TDataSource;
+    Label1: TLabel;
+    ComboBox1: TComboBox;
+    Button1: TButton;
+    Button2: TButton;
+    DBGrid1: TDBGrid;
+    Label3: TLabel;
+    Edit1: TEdit;
+    qry_pub: TADOQuery;
+    Label4: TLabel;
+    Label2: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure ComboBox1Exit(Sender: TObject);
+    procedure ComboBox1KeyPress(Sender: TObject; var Key: Char);
+    procedure DBGrid1KeyPress(Sender: TObject; var Key: Char);
+    procedure DBGrid1DblClick(Sender: TObject);
+    procedure Edit1Exit(Sender: TObject);
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
+    procedure Add_xsz(bmc,cxz:string;Cbox:TComboBox);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    tjks:string;
+    tjczy:string;
+    kj1:TObject;
+    sjid:string;
+    tjcljb:string;
+  end;
+
+var
+  frm_tjbg: Tfrm_tjbg;
+
+implementation
+
+{$R *.dfm}
+
+uses p_dm,p_func,p_blsj_hlsj,p_main,p_blsj_ycsj,p_blsj_ynyc,p_blsj_ywyc;
+
+
+procedure Tfrm_tjbg.Button1Click(Sender: TObject);
+var
+ls,ls1,ls2,lb,dqks,id,dqczy,cljb:string; //lb 第一位区分不良事件类型 A-医疗安全 B-护理不良事件  C-药品不良事件
+i:Integer;
+begin
+ lb:=Copy(sjid,1,1);
+ id:=Copy(sjid,2,20);
+ if trim(ComboBox1.Text)='' then
+ tjks:='';
+ if trim(Edit1.Text)='' then
+ tjczy:='';
+ if (tjks<>'') or (tjczy<>'')  then
+ begin
+ if lb='B' then // 护理事件
+ begin
+  i:=StrToInt(frm_hlsj.cljb);
+  i:=i+1;
+  cljb:=IntToStr(i);
+  dqks:=pub_ksdm;
+   dqczy:=frm_hlsj.dqczy;
+   frm_hlsj.Button5.Click;
+   ls:='insert into blsj_hlsj_cljl (sjid,clksdm,clczy,tjksdm,tjczy,tjrq,cljb) select '+#39+id+#39+','+#39+dqks+#39+','+#39+dqczy+#39+','+#39+tjks+#39+','+#39+tjczy+#39+','+#39+formatdatetime('yyyy-mm-dd hh:mm:ss',now)+#39+','+#39+cljb+#39;
+   qry_temp.Close;
+   qry_temp.SQL.Clear;
+   qry_temp.SQL.Add(ls);
+   qry_temp.ExecSQL;
+   ls1:='update blsj_hlsj_jbxx set ksdm='+#39+tjks+#39+',clczy='+#39+tjczy+#39+',cljb='+#39+cljb+#39+' where id='+#39+id+#39;
+   qry_temp.Close;
+   qry_temp.SQL.Clear;
+   qry_temp.SQL.Add(ls1);
+   qry_temp.ExecSQL;
+   application.messagebox('报告提交成功！', '提示', mb_ok + mb_iconinformation);
+   Self.Close;
+   frm_hlsj.qkjm;//清空界面
+   frm_hlsj.sxlb;
+ end
+ else if lb='A' then //医疗安全
+ begin
+  //i:=StrToInt(frm_ylaq.cljb);
+  i:=i+1;
+  cljb:=IntToStr(i);
+  dqks:=pub_ksdm;
+  //dqczy:=frm_ylaq.dqczy;
+  ls:='insert into blsj_ylaq_cljl (sjid,clksdm,clczy,tjksdm,tjczy,tjrq,cljb) select '+#39+id+#39+','+#39+dqks+#39+','+#39+dqczy+#39+','+#39+tjks+#39+','+#39+tjczy+#39+','+#39+formatdatetime('yyyy-mm-dd hh:mm:ss',now)+#39+','+#39+cljb+#39;
+  qry_temp.Close;
+  qry_temp.SQL.Clear;
+  qry_temp.SQL.Add(ls);
+  qry_temp.ExecSQL;
+  ls1:='update blsj_ylaq_jbxx set ksdm='+#39+tjks+#39+',clczy='+#39+tjczy+#39+',cljb='+#39+cljb+#39+' where id='+#39+id+#39;
+  qry_temp.Close;
+  qry_temp.SQL.Clear;
+  qry_temp.SQL.Add(ls1);
+  qry_temp.ExecSQL;
+  application.messagebox('报告提交成功！', '提示', mb_ok + mb_iconinformation);
+  Self.Close;
+ // frm_ylaq.qkjm;//清空界面
+  ls2:='select * from blsj_ylaq_jbxx where  (sfwc<>1 and clczy='+#39+pub_czydm+#39+') or (ksdm='+#39+pub_ksdm+#39+' and sfwc<>1 and clczy='+#39+#39+')';
+ // frm_ylaq.qry_lb.Close;
+ // frm_ylaq.qry_lb.SQL.Clear;
+ // frm_ylaq.qry_lb.SQL.Add(ls2);
+ // frm_ylaq.qry_lb.Open;
+ end
+ else if lb='C' then  //药品事件
+ begin
+ // i:=StrToInt(frm_ypsj.cljb);
+  //i:=i+1;
+  //cljb:=IntToStr(i);
+  cljb:='1';
+  dqks:=pub_ksdm;
+ // dqczy:=frm_ypsj.dqczy;
+ // frm_ypsj.Button5.Click;
+  ls:='insert into blsj_ypsj_cljl (sjid,clksdm,clczy,tjksdm,tjczy,tjrq,cljb) select '+#39+id+#39+','+#39+dqks+#39+','+#39+dqczy+#39+','+#39+tjks+#39+','+#39+tjczy+#39+','+#39+formatdatetime('yyyy-mm-dd hh:mm:ss',now)+#39+','+#39+cljb+#39;
+  qry_temp.Close;
+  qry_temp.SQL.Clear;
+  qry_temp.SQL.Add(ls);
+  qry_temp.ExecSQL;
+  ls1:='update blsj_ypsj_jbxx set ksdm='+#39+tjks+#39+',clczy='+#39+tjczy+#39+',cljb='+#39+cljb+#39+' where id='+#39+id+#39;
+  qry_temp.Close;
+  qry_temp.SQL.Clear;
+  qry_temp.SQL.Add(ls1);
+  qry_temp.ExecSQL;
+  application.messagebox('报告提交成功！', '提示', mb_ok + mb_iconinformation);
+  Self.Close;
+ // frm_ypsj.qkjm;
+  ls2:='select * from blsj_ypsj_jbxx where  (sfwc<>1 and clczy='+#39+pub_czydm+#39+') or (ksdm='+#39+pub_ksdm+#39+' and sfwc<>1 and clczy='+#39+#39+')';
+ // frm_ypsj.qry_lb.Close;
+ // frm_ypsj.qry_lb.SQL.Clear;
+ // frm_ypsj.qry_lb.SQL.Add(ls2);
+//  frm_ypsj.qry_lb.Open;
+ end
+  else if lb='D' then  //压疮风险评估
+  begin
+   i:=StrToInt(frm_ycsj.cljb);
+   i:=i+1;
+   cljb:=IntToStr(i);
+   dqks:=pub_ksdm;
+   dqczy:=frm_ycsj.dqczy;
+   frm_ycsj.Button5.Click;
+   ls:='insert into blsj_ycsj_cljl (sjid,clksdm,clczy,tjksdm,tjczy,tjrq,cljb) select '+#39+id+#39+','+#39+dqks+#39+','+#39+dqczy+#39+','+#39+tjks+#39+','+#39+tjczy+#39+','+#39+formatdatetime('yyyy-mm-dd hh:mm:ss',now)+#39+','+#39+cljb+#39;
+   qry_temp.Close;
+   qry_temp.SQL.Clear;
+   qry_temp.SQL.Add(ls);
+   qry_temp.ExecSQL;
+   ls1:='update blsj_ycsj_jbxx set ksdm='+#39+tjks+#39+',clczy='+#39+tjczy+#39+',cljb='+#39+cljb+#39+' where id='+#39+id+#39;
+   qry_temp.Close;
+   qry_temp.SQL.Clear;
+   qry_temp.SQL.Add(ls1);
+   qry_temp.ExecSQL;
+   application.messagebox('报告提交成功！', '提示', mb_ok + mb_iconinformation);
+   Self.Close;
+   frm_ycsj.qkjm;
+   frm_ycsj.sxlb;
+  end
+  else if lb='E' then //院内压疮上报
+  begin
+   i:=StrToInt(frm_ynyc.cljb);
+   i:=i+1;
+   cljb:=IntToStr(i);
+   dqks:=pub_ksdm;
+   dqczy:=frm_ynyc.dqczy;
+   frm_ynyc.Button5.Click;
+   ls:='insert into blsj_ynyc_cljl (sjid,clksdm,clczy,tjksdm,tjczy,tjrq,cljb) select '+#39+id+#39+','+#39+dqks+#39+','+#39+dqczy+#39+','+#39+tjks+#39+','+#39+tjczy+#39+','+#39+formatdatetime('yyyy-mm-dd hh:mm:ss',now)+#39+','+#39+cljb+#39;
+   qry_temp.Close;
+   qry_temp.SQL.Clear;
+   qry_temp.SQL.Add(ls);
+   qry_temp.ExecSQL;
+   ls1:='update blsj_ynyc_jbxx set ksdm='+#39+tjks+#39+',clczy='+#39+tjczy+#39+',cljb='+#39+cljb+#39+' where id='+#39+id+#39;
+   qry_temp.Close;
+   qry_temp.SQL.Clear;
+   qry_temp.SQL.Add(ls1);
+   qry_temp.ExecSQL;
+   application.messagebox('报告提交成功！', '提示', mb_ok + mb_iconinformation);
+   Self.Close;
+   frm_ynyc.qkjm;
+   frm_ynyc.sxlb;//待处理病人列表刷新
+  end
+   else if lb='F' then  //院外压疮上报
+  begin
+   i:=StrToInt(frm_ywyc.cljb);
+   i:=i+1;
+   cljb:=IntToStr(i);
+   dqks:=pub_ksdm;
+   dqczy:=frm_ywyc.dqczy;
+   frm_ywyc.Button5.Click;
+   ls:='insert into blsj_ywyc_cljl (sjid,clksdm,clczy,tjksdm,tjczy,tjrq,cljb) select '+#39+id+#39+','+#39+dqks+#39+','+#39+dqczy+#39+','+#39+tjks+#39+','+#39+tjczy+#39+','+#39+formatdatetime('yyyy-mm-dd hh:mm:ss',now)+#39+','+#39+cljb+#39;
+   qry_temp.Close;
+   qry_temp.SQL.Clear;
+   qry_temp.SQL.Add(ls);
+   qry_temp.ExecSQL;
+   ls1:='update blsj_ywyc_jbxx set ksdm='+#39+tjks+#39+',clczy='+#39+tjczy+#39+',cljb='+#39+cljb+#39+' where id='+#39+id+#39;
+   qry_temp.Close;
+   qry_temp.SQL.Clear;
+   qry_temp.SQL.Add(ls1);
+   qry_temp.ExecSQL;
+   application.messagebox('提交成功，保存后生效！', '提示', mb_ok + mb_iconinformation);
+   Self.Close;
+   frm_ywyc.qkjm;
+   frm_ywyc.sxlb;//待处理病人列表刷新
+  end
+  else if (lb='S')and (tjczy<>'') then //院内压疮治愈情况提交
+  begin
+ // frm_ynyc.ado_jbxx['zyschsz']:=tjczy;
+  application.messagebox('提交成功，保存后生效！', '提示', mb_ok + mb_iconinformation);
+  Self.Close;
+  end
+  else if (lb='T') and (tjczy<>'') then ////院外压疮治愈情况提交
+  begin
+  // frm_ywyc.ado_jbxx['zyschsz']:=tjczy;
+   application.messagebox('提交成功，保存后生效！', '提示', mb_ok + mb_iconinformation);
+   Self.Close;
+  end;
+ end
+ else
+ begin
+  application.MessageBox(pchar('提交科室和人员应至少填写一项!'),'注意',16);
+  ComboBox1.SetFocus;
+ end;
+end;
+
+procedure Tfrm_tjbg.Button2Click(Sender: TObject);
+begin
+Self.Close;
+end;
+
+procedure Tfrm_tjbg.ComboBox1Exit(Sender: TObject);
+var
+s,s1,ls:string;
+begin
+kj1:=Sender;
+s:=Trim(ComboBox1.Text);
+if (Length(s)<=6) and (Length(s)>0) and  ((s[1] in ['0'..'9']) or (s[1] in ['A'..'z'])) then
+begin
+ ls:='select dm,mc from sys_ksdm where dm='+#39+s+#39+' union select dm,mc from sys_ksdm where Upper(pym) like'+#39+'%'+s+'%'+#39;
+ qry_temp.SQL.Clear;
+ qry_temp.SQL.Add(ls);
+ qry_temp.Open;
+ if qry_temp.RecordCount=0 then
+ begin
+   application.MessageBox(pchar('没有找到你要查找的内容'),'注意',16);
+ ComboBox1.SetFocus;
+ end
+ else if qry_temp.RecordCount>1 then
+ begin
+  try
+     qry_xz.Close;
+     qry_xz.SQL.Clear;
+     qry_xz.SQL.Add(ls);
+     qry_xz.Open;
+    except
+    Application.MessageBox('拼音码错误”', '错误提示', 20)
+    end;
+     DBGrid1.left:=ComboBox1.left;
+     DBGrid1.top:=ComboBox1.top+combobox1.Height+1;
+     DBGrid1.Visible:=true;
+     DBGrid1.SetFocus;
+ end
+ else
+ begin
+  tjks:=Trim(qry_temp.fieldbyname('dm').asstring);
+  ComboBox1.text:=Trim(qry_temp.fieldbyname('mc').asstring);
+ end;
+end
+else if (Length(s)>6) and (s[1] in ['0'..'9']) then
+begin
+ tjks:=copy(s,1,4);
+ ComboBox1.Text:=Copy(s,6,length(s)-5);
+end;
+     
+end;
+
+procedure Tfrm_tjbg.ComboBox1KeyPress(Sender: TObject; var Key: Char);
+begin
+if Key=#13 then
+ Edit1.SetFocus
+end;
+
+procedure Tfrm_tjbg.DBGrid1DblClick(Sender: TObject);
+begin
+ if kj1=ComboBox1 then
+  begin
+  tjks:=Trim(qry_xz.fieldbyname('dm').asstring);
+  ComboBox1.text:=Trim(qry_xz.fieldbyname('mc').asstring);
+  DBGrid1.Visible:=False;
+  Edit1.SetFocus;
+  end
+  else  if kj1=Edit1 then
+  begin
+  tjczy:=Trim(qry_xz.fieldbyname('dm').asstring);
+  Edit1.text:=Trim(qry_xz.fieldbyname('mc').asstring);
+  DBGrid1.Visible:=False;
+  Button1.SetFocus
+  end;
+end;
+
+procedure Tfrm_tjbg.DBGrid1KeyPress(Sender: TObject; var Key: Char);
+begin
+ if Key=#13 then
+ begin
+  if kj1=ComboBox1 then
+  begin
+  tjks:=Trim(qry_xz.fieldbyname('dm').asstring);
+  ComboBox1.text:=Trim(qry_xz.fieldbyname('mc').asstring);
+  DBGrid1.Visible:=False;
+  Edit1.SetFocus;
+  end
+  else  if kj1=Edit1 then
+  begin
+  tjczy:=Trim(qry_xz.fieldbyname('dm').asstring);
+  Edit1.text:=Trim(qry_xz.fieldbyname('mc').asstring);
+  DBGrid1.Visible:=False;
+  Button1.SetFocus
+  end;
+       
+ end
+ else if Key=#27 then
+ DBGrid1.Visible:=False;
+end;
+
+procedure Tfrm_tjbg.Edit1Exit(Sender: TObject);
+var s1,ls:string;
+begin
+ kj1:=Sender;
+ s1:=Uppercase(Edit1.TEXT);
+ if length(trim(s1))>0 then
+ begin
+  if (s1[1] in ['0'..'9']) or (s1[1] in ['A'..'z']) then
+  begin
+   kj1:=sender;
+   if s1[1] in ['0'..'9'] then
+    ls:='select * from sys_czy where dm='+#39+s1+#39
+   else
+    ls:='select * from sys_czy where Upper(pym) like'+#39+'%'+s1+'%'+#39;
+   qry_temp.Close;
+   qry_temp.SQL.Clear;
+   qry_temp.SQL.Add(ls);
+   qry_temp.Open;
+   if qry_temp.RecordCount=0 then
+   begin
+     Application.MessageBox('没有找到要查找的内容', '错误提示', 16);
+    Edit1.SetFocus;
+   end
+   else if qry_temp.RecordCount>1 then
+   begin
+    try
+     qry_xz.Close;
+     qry_xz.SQL.Clear;
+     qry_xz.SQL.Add(ls);
+     qry_xz.Open;
+    except
+    Application.MessageBox('拼音码错误”', '错误提示', 16)
+    end;
+
+     DBGrid1.left:=Edit1.left;
+     DBGrid1.top:=Edit1.top+edit1.Height+1;
+     DBGrid1.Visible:=true;
+     DBGrid1.SetFocus;
+   end
+   else
+   begin
+   tjczy:=Trim(qry_temp.fieldbyname('dm').asstring);
+   Edit1.Text:=Trim(qry_temp.fieldbyname('mc').asstring)
+   end;
+  end
+  else if s1[1]<#127 then
+  begin
+    Application.MessageBox('请输入人员代码或拼音简码', '错误提示', 16);
+   Edit1.SetFocus;
+  end;
+ end;
+end;
+
+procedure Tfrm_tjbg.Edit1KeyPress(Sender: TObject; var Key: Char);
+begin
+if Key=#13 then
+ Button1.SetFocus
+end;
+
+procedure Tfrm_tjbg.FormCreate(Sender: TObject);
+begin
+ // Add_xsz('sys_ksdm','dm',ComboBox1);
+end;
+ procedure Tfrm_tjbg.FormShow(Sender: TObject);
+ var
+ id,lb:string;
+ brks: string;
+ begin lb:=Copy(sjid,1,1);
+ id:=Copy(sjid,2,20);
+ if lb<>'A'   then
+ begin
+  label2.Visible:=false;
+  combobox1.Visible:=false;
+ end;
+ if (lb='C')  then
+//and (frm_ypsj.cljb='1') then
+ begin
+   qry_temp.Close;
+   qry_temp.SQL.Clear;
+   qry_temp.SQL.Add('select b.dm,b.mc from blsj_tjdzb a,sys_czy b  where a.tjry=b.dm and  a.sjlx=:sjlx ');
+   qry_temp.Parameters.ParamByName('sjlx').Value:='ypblsj';
+   qry_temp.Open;
+   tjczy:=Trim(qry_temp.fieldbyname('dm').asstring);
+   Edit1.Text:=Trim(qry_temp.fieldbyname('mc').asstring) ;
+   if  tjczy<>'' then
+   edit1.ReadOnly:=true;
+ end;
+ if (lb='B') and (frm_hlsj.cljb='2') then
+ begin
+  qry_temp.Close;
+  qry_temp.SQL.Clear;
+  qry_temp.SQL.Add('select b.dm,b.mc from blsj_tjdzb a,sys_czy b  where a.tjry=b.dm and  a.sjlx=:sjlx and a.ksdm=:ksdm');
+  qry_temp.Parameters.ParamByName('sjlx').Value:='hlsjhlb';
+  qry_temp.Parameters.ParamByName('ksdm').Value:=pub_ksdm;
+  qry_temp.Open;
+  tjczy:=Trim(qry_temp.fieldbyname('dm').asstring);
+  Edit1.Text:=Trim(qry_temp.fieldbyname('mc').asstring) ;
+  if  tjczy<>'' then
+  edit1.ReadOnly:=true;
+ end
+ else  if (lb='B') and (frm_hlsj.cljb='3') then
+ begin
+  qry_temp.Close;
+  qry_temp.SQL.Clear;
+  qry_temp.SQL.Add('select * from blsj_hlsj_jbxx  where  id='+id);
+  qry_temp.open;
+  brks:=qry_temp.FieldByName('sbks').AsString;
+  qry_temp.Close;
+  qry_temp.SQL.Clear;
+  qry_temp.SQL.Add('select b.dm,b.mc from blsj_tjdzb a,sys_czy b  where a.tjry=b.dm and  a.sjlx=:sjlx and a.ksdm=:ksdm');
+  qry_temp.Parameters.ParamByName('sjlx').Value:='hlsjhlb';
+  qry_temp.Parameters.ParamByName('ksdm').Value:=brks;
+  qry_temp.Open;
+  tjczy:=Trim(qry_temp.fieldbyname('dm').asstring);
+  Edit1.Text:=Trim(qry_temp.fieldbyname('mc').asstring) ;
+  if  tjczy<>'' then
+  edit1.ReadOnly:=true;
+ end
+ else if (lb='D') and (tjcljb='2')then
+ begin
+  qry_temp.Close;
+  qry_temp.SQL.Clear;
+  qry_temp.SQL.Add('select b.dm,b.mc from blsj_tjdzb a,sys_czy b  where a.tjry=b.dm and  a.sjlx=:sjlx and a.ksdm=:ksdm');
+  qry_temp.Parameters.ParamByName('sjlx').Value:='ycxgsj';
+  qry_temp.Parameters.ParamByName('ksdm').Value:=pub_ksdm;
+  qry_temp.Open;
+  tjczy:=Trim(qry_temp.fieldbyname('dm').asstring);
+  Edit1.Text:=Trim(qry_temp.fieldbyname('mc').asstring) ;
+  if  tjczy<>'' then
+  edit1.ReadOnly:=true;
+ end
+ else if  (lb='E') and (tjcljb='2')then
+ begin
+  qry_temp.Close;
+  qry_temp.SQL.Clear;
+  qry_temp.SQL.Add('select b.dm,b.mc from blsj_tjdzb a,sys_czy b  where a.tjry=b.dm and  a.sjlx=:sjlx and a.ksdm=:ksdm');
+  qry_temp.Parameters.ParamByName('sjlx').Value:='ynyc';
+  qry_temp.Parameters.ParamByName('ksdm').Value:=pub_ksdm;
+  qry_temp.Open;
+  tjczy:=Trim(qry_temp.fieldbyname('dm').asstring);
+  Edit1.Text:=Trim(qry_temp.fieldbyname('mc').asstring) ;
+  if  tjczy<>'' then
+  edit1.ReadOnly:=true;
+ end
+ else if  (lb='F') and (tjcljb='2')then
+ begin
+  qry_temp.Close;
+  qry_temp.SQL.Clear;
+  qry_temp.SQL.Add('select b.dm,b.mc from blsj_tjdzb a,sys_czy b  where a.tjry=b.dm and  a.sjlx=:sjlx and a.ksdm=:ksdm');
+  qry_temp.Parameters.ParamByName('sjlx').Value:='ywyc';
+  qry_temp.Parameters.ParamByName('ksdm').Value:=pub_ksdm;
+  qry_temp.Open;
+  tjczy:=Trim(qry_temp.fieldbyname('dm').asstring);
+  Edit1.Text:=Trim(qry_temp.fieldbyname('mc').asstring) ;
+  if  tjczy<>'' then
+  edit1.ReadOnly:=true;
+ end
+ else if (lb='S') or (lb='T') then
+  begin
+   combobox1.Visible:=false;
+   label1.Caption:='是否将压疮治愈情况提交至';
+   label3.Caption:='护士长';
+  end;
+ end;
+
+procedure Tfrm_tjbg.Add_xsz(bmc,cxz:string;Cbox:TComboBox);
+ var sj:string;
+begin
+  Qry_pub.close;
+  Qry_pub.SQL.clear;
+  Qry_pub.sql.add('select * from '+bmc+' order by '+cxz);
+  Qry_pub.open;
+  Cbox.items.clear;
+  if (bmc='zysf_rybq') or (bmc='zysf_rytj')then
+    begin
+     while not Qry_pub.eof do
+  begin
+    Cbox.items.add(trim(Qry_pub.FieldByName('dm').asstring)+'-'+trim(Qry_pub.FieldByName('sm').asstring));
+    Qry_pub.next;
+  end;
+    end
+    else
+    begin
+  while not Qry_pub.eof do
+  begin
+    Cbox.items.add(trim(Qry_pub.FieldByName('dm').asstring)+'-'+trim(Qry_pub.FieldByName('mc').asstring));
+    Qry_pub.next;
+  end;
+   end
+end;
+
+end.

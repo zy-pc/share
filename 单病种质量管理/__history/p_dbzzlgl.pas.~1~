@@ -1,0 +1,102 @@
+unit p_dbzzlgl;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxStyles, cxCustomData, cxGraphics, cxFilter, cxData, cxDataStorage,
+  cxEdit, DB, cxDBData, cxGridLevel, cxClasses, cxControls, cxGridCustomView,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, DBCtrls,
+  ComCtrls, StdCtrls, ADODB;
+
+type
+  Tfrm_dbzzlgl = class(TForm)
+    grp1: TGroupBox;
+    lbl1: TLabel;
+    lbl2: TLabel;
+    lbl3: TLabel;
+    Button1: TButton;
+    dtp_ks: TDateTimePicker;
+    dtp_js: TDateTimePicker;
+    Button3: TButton;
+    dblkcbb_ys: TDBLookupComboBox;
+    cxGrid1: TcxGrid;
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    qry_ysdm: TADOQuery;
+    ds_ysdm: TDataSource;
+    ado_qry: TADOQuery;
+    ds_qry: TDataSource;
+    ado_qryzyh: TStringField;
+    ado_qrytmh: TStringField;
+    ado_qrybrxm: TStringField;
+    ado_qrybrxb: TStringField;
+    ado_qrybrnl: TStringField;
+    ado_qryksdm: TStringField;
+    ado_qryksmc: TStringField;
+    ado_qryryrq: TDateTimeField;
+    ado_qryryzd: TStringField;
+    ado_qryysxm: TStringField;
+    cxGrid1DBTableView1tmh: TcxGridDBColumn;
+    cxGrid1DBTableView1brxm: TcxGridDBColumn;
+    cxGrid1DBTableView1brxb: TcxGridDBColumn;
+    cxGrid1DBTableView1brnl: TcxGridDBColumn;
+    cxGrid1DBTableView1ksdm: TcxGridDBColumn;
+    cxGrid1DBTableView1ksmc: TcxGridDBColumn;
+    cxGrid1DBTableView1ryrq: TcxGridDBColumn;
+    cxGrid1DBTableView1ryzd: TcxGridDBColumn;
+    cxGrid1DBTableView1ysxm: TcxGridDBColumn;
+    procedure Button3Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_dbzzlgl: Tfrm_dbzzlgl;
+
+implementation
+ uses p_dm, p_func;
+{$R *.dfm}
+
+procedure Tfrm_dbzzlgl.FormShow(Sender: TObject);
+begin
+
+    dtp_ks.DateTime := StrToDate(formatdatetime('yyyy-mm-dd',IncMonth(Frm_func.curr_date,-1)));
+    dtp_js.DateTime := StrToDate(formatdatetime('yyyy-mm-dd',Frm_func.curr_date));
+  { qry_ysdm.Active := false;
+    qry_ysdm.Parameters.ParamByName('cxysdm').Value := pub_ksdm;
+    qry_ysdm.Open; }
+end;
+
+
+procedure Tfrm_dbzzlgl.Button1Click(Sender: TObject);
+var
+ sSql,sWh:string;
+begin
+ sSql := 'select *  from  zybl_dbzzlgl where  ksdm = '''+pub_ksdm+''' ' ;
+ //if dblkcbb_ys.KeyValue <> '' then
+  // sWh := 'and  ysdm = '''+dblkcbb_ys.KeyValue+''' ' ;
+ sWh := sWh + ' and  ryrq >= '''  +formatdatetime('yyyy-mm-dd',dtp_ks.DateTime)+''' and ryrq <= '''+formatdatetime('yyyy-mm-dd',dtp_js.DateTime)+''' ';
+ try
+   ado_qry.Close;
+   ado_qry.SQL.Text := sSql + sWh;
+   ado_qry.Open;
+ finally
+
+ end;
+
+
+
+end;
+
+procedure Tfrm_dbzzlgl.Button3Click(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

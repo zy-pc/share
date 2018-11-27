@@ -1,0 +1,102 @@
+object frm_fzsm: Tfrm_fzsm
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = #21307#22065#35828#26126#32534#36753#31383#21475
+  ClientHeight = 361
+  ClientWidth = 550
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object GroupBox1: TGroupBox
+    Left = 0
+    Top = 0
+    Width = 550
+    Height = 361
+    Align = alClient
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = #23435#20307
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 24
+      Top = 336
+      Width = 137
+      Height = 13
+      Caption = #27880':'#21452#20987#32534#36753#26694#36873#25321#24405#20837
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clNavy
+      Font.Height = -13
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+    end
+    object Button1: TButton
+      Left = 360
+      Top = 328
+      Width = 75
+      Height = 25
+      Caption = #20445#23384'(&S)'
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 434
+      Top = 328
+      Width = 75
+      Height = 25
+      Caption = #25918#24323'(&C)'
+      Font.Charset = GB2312_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+    object cxDBMemo1: TcxDBMemo
+      Left = 2
+      Top = 8
+      DataBinding.DataField = 'fzsm'
+      DataBinding.DataSource = ds_fzsm
+      TabOrder = 2
+      OnDblClick = cxDBMemo1DblClick
+      Height = 313
+      Width = 545
+    end
+  end
+  object ds_fzsm: TDataSource
+    DataSet = qry_fzsm
+    Left = 72
+    Top = 120
+  end
+  object qry_fzsm: TADOQuery
+    Connection = DM_data.ado_mydata
+    CursorType = ctStatic
+    LockType = ltBatchOptimistic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from zybl_zyyz_syfzsm')
+    Left = 104
+    Top = 120
+  end
+end

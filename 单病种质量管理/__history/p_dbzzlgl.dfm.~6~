@@ -1,0 +1,435 @@
+object frm_dbzzlgl: Tfrm_dbzzlgl
+  Left = 0
+  Top = 0
+  Caption = #21333#30149#31181#36136#37327#31649#29702#26597#35810
+  ClientHeight = 531
+  ClientWidth = 1031
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object grp1: TGroupBox
+    Left = 0
+    Top = 0
+    Width = 1031
+    Height = 43
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 856
+    object lbl1: TLabel
+      Left = 712
+      Top = 20
+      Width = 28
+      Height = 13
+      Caption = #21307#29983':'
+      Visible = False
+    end
+    object lbl2: TLabel
+      Left = 22
+      Top = 16
+      Width = 52
+      Height = 13
+      Caption = #20837#38498#26102#38388':'
+    end
+    object lbl3: TLabel
+      Left = 187
+      Top = 16
+      Width = 12
+      Height = 13
+      Caption = #21040
+    end
+    object Button1: TButton
+      Left = 398
+      Top = 10
+      Width = 75
+      Height = 25
+      Caption = #26597#35810'(&Q)'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object dtp_ks: TDateTimePicker
+      Left = 78
+      Top = 12
+      Width = 105
+      Height = 23
+      Date = 38852.468250868060000000
+      Time = 38852.468250868060000000
+      TabOrder = 2
+    end
+    object dtp_js: TDateTimePicker
+      Left = 206
+      Top = 12
+      Width = 105
+      Height = 23
+      Date = 38852.468250868060000000
+      Time = 38852.468250868060000000
+      TabOrder = 3
+    end
+    object Button3: TButton
+      Left = 513
+      Top = 10
+      Width = 75
+      Height = 25
+      Caption = #36820#22238'(&B)'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = #23435#20307
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = Button3Click
+    end
+    object dblkcbb_ys: TDBLookupComboBox
+      Left = 746
+      Top = 16
+      Width = 94
+      Height = 21
+      KeyField = 'dm'
+      ListField = 'mc'
+      TabOrder = 4
+      Visible = False
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 43
+    Width = 1031
+    Height = 488
+    Align = alClient
+    TabOrder = 1
+    ExplicitLeft = 112
+    ExplicitTop = 104
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object cxgrd1: TcxGrid
+      Left = 1
+      Top = 351
+      Width = 1029
+      Height = 136
+      Align = alClient
+      TabOrder = 0
+      Visible = False
+      ExplicitLeft = 0
+      ExplicitTop = -125
+      ExplicitWidth = 856
+      ExplicitHeight = 125
+      object cxgrdbtblvwGrid2DBTableView1: TcxGridDBTableView
+        NavigatorButtons.ConfirmDelete = False
+        DataController.DataSource = ds_dbzfy
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        OptionsView.GroupByBox = False
+        object cxgrdbclmnGrid2DBTableView1Column1: TcxGridDBColumn
+          Caption = #36153#29992#39033#30446
+          DataBinding.FieldName = 'mc1'
+          Options.Filtering = False
+          Width = 147
+        end
+        object cxgrdbclmnGrid2DBTableView1Column2: TcxGridDBColumn
+          Caption = #36153#29992#37329#39069
+          DataBinding.FieldName = 'je1'
+          Options.Filtering = False
+          Width = 98
+        end
+        object cxgrdbclmnGrid2DBTableView1Column3: TcxGridDBColumn
+          Caption = #36153#29992#39033#30446
+          DataBinding.FieldName = 'mc2'
+          Options.Filtering = False
+          Width = 142
+        end
+        object cxgrdbclmnGrid2DBTableView1Column4: TcxGridDBColumn
+          Caption = #36153#29992#37329#39069
+          DataBinding.FieldName = 'je2'
+          Options.Filtering = False
+          Width = 99
+        end
+        object cxgrdbclmnGrid2DBTableView1Column5: TcxGridDBColumn
+          Caption = #36153#29992#39033#30446
+          DataBinding.FieldName = 'mc3'
+          Options.Filtering = False
+          Width = 162
+        end
+        object cxgrdbclmnGrid2DBTableView1Column6: TcxGridDBColumn
+          Caption = #36153#29992#37329#39069
+          DataBinding.FieldName = 'je3'
+          Options.Filtering = False
+          Width = 87
+        end
+        object cxgrdbclmnGrid2DBTableView1Column7: TcxGridDBColumn
+          Caption = #36153#29992#39033#30446
+          DataBinding.FieldName = 'mc4'
+          Options.Filtering = False
+          Width = 136
+        end
+        object cxgrdbclmnGrid2DBTableView1Column8: TcxGridDBColumn
+          Caption = #36153#29992#37329#39069
+          DataBinding.FieldName = 'je4'
+          Options.Filtering = False
+          Width = 112
+        end
+      end
+      object cxgrdlvlGrid2Level1: TcxGridLevel
+        GridView = cxgrdbtblvwGrid2DBTableView1
+      end
+    end
+    object cxGrid1: TcxGrid
+      Left = 1
+      Top = 1
+      Width = 1029
+      Height = 350
+      Align = alTop
+      TabOrder = 1
+      ExplicitTop = 0
+      ExplicitWidth = 1013
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        OnDblClick = cxGrid1DBTableView1DblClick
+        NavigatorButtons.ConfirmDelete = False
+        DataController.DataSource = ds_qry
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <
+          item
+            Format = '0'
+            Kind = skCount
+            FieldName = 'tmh'
+            Column = cxGrid1DBTableView1tmh
+          end>
+        DataController.Summary.SummaryGroups = <>
+        OptionsData.Deleting = False
+        OptionsData.DeletingConfirmation = False
+        OptionsData.Editing = False
+        OptionsData.Inserting = False
+        OptionsView.Footer = True
+        OptionsView.GroupByBox = False
+        OptionsView.GroupFooters = gfVisibleWhenExpanded
+        object cxGrid1DBTableView1tmh: TcxGridDBColumn
+          DataBinding.FieldName = 'tmh'
+        end
+        object cxGrid1DBTableView1brxm: TcxGridDBColumn
+          DataBinding.FieldName = 'brxm'
+          Width = 108
+        end
+        object cxGrid1DBTableView1brxb: TcxGridDBColumn
+          Caption = #24615#21035
+          DataBinding.FieldName = 'brxb'
+          Width = 65
+        end
+        object cxGrid1DBTableView1brnl: TcxGridDBColumn
+          Caption = #24180#40836
+          DataBinding.FieldName = 'brnl'
+          Width = 57
+        end
+        object cxGrid1DBTableView1ksdm: TcxGridDBColumn
+          DataBinding.FieldName = 'ksdm'
+          Width = 69
+        end
+        object cxGrid1DBTableView1ksmc: TcxGridDBColumn
+          DataBinding.FieldName = 'ksmc'
+          Width = 116
+        end
+        object cxGrid1DBTableView1ryrq: TcxGridDBColumn
+          DataBinding.FieldName = 'ryrq'
+        end
+        object cxGrid1DBTableView1ryzd: TcxGridDBColumn
+          DataBinding.FieldName = 'ryzd'
+          Width = 131
+        end
+        object cxGrid1DBTableView1ysxm: TcxGridDBColumn
+          DataBinding.FieldName = 'ysxm'
+          Width = 66
+        end
+        object cxgrdbclmnGrid1DBTableView1Column1: TcxGridDBColumn
+          Caption = #24635#36153#29992
+          DataBinding.FieldName = 'zfy'
+        end
+        object cxgrdbclmnGrid1DBTableView1Column2: TcxGridDBColumn
+          Caption = #20303#38498#22825#25968
+          DataBinding.FieldName = 'ts'
+        end
+        object cxgrdbclmnGrid1DBTableView1Column3: TcxGridDBColumn
+          Caption = #26631#20934#36153#29992
+          DataBinding.FieldName = 'BZFY'
+        end
+        object cxgrdbclmnGrid1DBTableView1Column4: TcxGridDBColumn
+          Caption = #26631#20934#20303#38498#22825#25968
+          DataBinding.FieldName = 'bZZYR'
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object qry_ysdm: TADOQuery
+    Connection = DM_data.ado_mydata
+    CursorType = ctStatic
+    Parameters = <
+      item
+        Name = 'cxysdm'
+        DataType = ftString
+        Size = 2
+        Value = #39#39
+      end>
+    SQL.Strings = (
+      'select * from sys_czy where ksdm=:cxysdm and ysbz=1')
+    Left = 312
+    Top = 144
+  end
+  object ds_ysdm: TDataSource
+    DataSet = qry_ysdm
+    Left = 272
+    Top = 144
+  end
+  object ado_qry: TADOQuery
+    Connection = DM_data.ado_mydata
+    CursorType = ctStatic
+    Parameters = <
+      item
+        Name = 'ksdm'
+        DataType = ftString
+        NumericScale = 255
+        Precision = 255
+        Size = 4
+        Value = Null
+      end
+      item
+        Name = 'ksrq'
+        DataType = ftDateTime
+        NumericScale = 3
+        Precision = 23
+        Size = 16
+        Value = Null
+      end
+      item
+        Name = 'jsrq'
+        DataType = ftDateTime
+        NumericScale = 3
+        Precision = 23
+        Size = 16
+        Value = Null
+      end>
+    SQL.Strings = (
+      
+        'select a.zyh,a.tmh,a.brxm,a.brxb,a.brnl,c.mc as ksmc,a.ryrq,a.ry' +
+        'zd,d.mc as ysxm,a.zgys as ysdm,a.zfy,DATEDIFF(day,ryrq,ISNULL(cy' +
+        'rq,getdate())) as ts,F.BZFY,f.BZZYR,a.ksdm'
+      
+        ' from zysf_zydj a,LCLJ_brlclj b,sys_ksdm c,sys_czy d,LCLJ_LCLJML' +
+        ' e,LCLJ_LCLJBB F'
+      
+        '  where a.zyh=b.zyh and a.ksdm=c.dm and a.zgys=d.dm and b.LJID=e' +
+        '.LJID '
+      
+        '  and ISNULL(e.dbzgl,0)=1 AND E.LJID=F.LJID and c.dm=:ksdm and  ' +
+        'ryrq >= :ksrq and  ryrq <= :jsrq')
+    Left = 456
+    Top = 176
+    object ado_qryzyh: TStringField
+      DisplayLabel = #20303#38498#21495
+      FieldName = 'zyh'
+      Size = 16
+    end
+    object ado_qrytmh: TStringField
+      DisplayLabel = #20303#38498#21495
+      FieldName = 'tmh'
+      Size = 9
+    end
+    object ado_qrybrxm: TStringField
+      DisplayLabel = #30149#20154#22995#21517
+      FieldName = 'brxm'
+      Size = 12
+    end
+    object ado_qrybrxb: TStringField
+      DisplayLabel = #30149#20154#24615#21035
+      FieldName = 'brxb'
+      Size = 2
+    end
+    object ado_qrybrnl: TStringField
+      DisplayLabel = #30149#20154#24180#40836
+      FieldName = 'brnl'
+      Size = 50
+    end
+    object ado_qryksdm: TStringField
+      DisplayLabel = #31185#23460#20195#30721
+      FieldName = 'ksdm'
+      Size = 4
+    end
+    object ado_qryksmc: TStringField
+      DisplayLabel = #31185#23460#21517#31216
+      FieldName = 'ksmc'
+      Size = 50
+    end
+    object ado_qryryrq: TDateTimeField
+      DisplayLabel = #20837#38498#26102#38388
+      FieldName = 'ryrq'
+    end
+    object ado_qryryzd: TStringField
+      DisplayLabel = #20837#38498#35786#26029
+      FieldName = 'ryzd'
+      Size = 40
+    end
+    object ado_qryysxm: TStringField
+      DisplayLabel = #20837#38498#21307#29983
+      FieldName = 'ysxm'
+      Size = 50
+    end
+    object ado_qryysdm: TStringField
+      FieldName = 'ysdm'
+      FixedChar = True
+      Size = 4
+    end
+    object ado_qryzfy: TBCDField
+      FieldName = 'zfy'
+      Precision = 19
+      Size = 2
+    end
+    object ado_qryts: TIntegerField
+      FieldName = 'ts'
+      ReadOnly = True
+    end
+    object ado_qryBZFY: TStringField
+      FieldName = 'BZFY'
+    end
+    object ado_qryBZZYR: TStringField
+      FieldName = 'BZZYR'
+      Size = 10
+    end
+  end
+  object ds_qry: TDataSource
+    DataSet = ado_qry
+    Left = 416
+    Top = 176
+  end
+  object sp_dbzfy: TADOStoredProc
+    Connection = DM_data.ado_mydata
+    CursorType = ctStatic
+    ProcedureName = 'zysf_cx_dbzbrfy'
+    Parameters = <
+      item
+        Name = '@zyh'
+        DataType = ftString
+        Size = 9
+        Value = Null
+      end>
+    Left = 272
+    Top = 264
+  end
+  object ds_dbzfy: TDataSource
+    DataSet = sp_dbzfy
+    Left = 328
+    Top = 264
+  end
+end

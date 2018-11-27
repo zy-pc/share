@@ -1,0 +1,167 @@
+unit p_blsj_bqgcyy;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, DB, ADODB, GridsEh, DBGridEh, ExtCtrls, ComCtrls,
+  StdCtrls, DBGridEhGrouping;
+
+type
+  Tfrm_blsj_bqgcyy = class(TForm)
+    Panel1: TPanel;
+    DBGridEh1: TDBGridEh;
+    qry_yygf: TADOQuery;
+    ds_yygf: TDataSource;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    TreeView1: TTreeView;
+    ADOQuery1: TADOQuery;
+    procedure FormShow(Sender: TObject);
+    procedure DBGridEh1DblClick(Sender: TObject);
+    procedure TreeView1Change(Sender: TObject; Node: TTreeNode);
+    procedure RadioButton2Click(Sender: TObject);
+    procedure RadioButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  sqlstr: string;
+  node:TTreeNode;
+  zptext:string;
+  sjlb:string;
+  end;
+
+var
+  frm_blsj_bqgcyy: Tfrm_blsj_bqgcyy;
+
+implementation
+uses
+p_dm,p_func,p_blsj_hlsj,p_blsj_ycsj,p_blsj_ynyc, p_blsj_ywyc,p_ylaqsjbgb;
+
+{$R *.dfm}
+
+procedure Tfrm_blsj_bqgcyy.DBGridEh1DblClick(Sender: TObject);
+begin
+if (not qry_yygf.IsEmpty)  and (sjlb='护理不良事件') then
+ frm_hlsj.str_mbct:=qry_yygf.FieldByName('yy').AsString
+else if (not qry_yygf.IsEmpty)  and (sjlb='压疮风险评估') then
+ frm_ycsj.str_mbct:=qry_yygf.FieldByName('yy').AsString
+ else if (not qry_yygf.IsEmpty)  and (sjlb='院内压疮') then
+ frm_ynyc.str_mbct:=qry_yygf.FieldByName('yy').AsString
+  else if (not qry_yygf.IsEmpty)  and (sjlb='医疗安全(不良)事件报告') then
+ frm_ylaqsjbgb.str_mbct:=qry_yygf.FieldByName('yy').AsString
+ else if (not qry_yygf.IsEmpty)  and (sjlb='院外压疮') then
+ frm_ywyc.str_mbct:=qry_yygf.FieldByName('yy').AsString;
+ self.Close;
+end;
+
+procedure Tfrm_blsj_bqgcyy.FormShow(Sender: TObject);
+var
+i:Integer;
+  begin
+    RadioButton2.Checked:=true;
+    RadioButton2Click(self);
+  end;
+
+
+procedure Tfrm_blsj_bqgcyy.RadioButton1Click(Sender: TObject);
+var
+i:Integer;
+begin
+       TreeView1.Items.Clear ;
+       Node := nil;
+       ADOQuery1.close;
+       ADOQuery1.SQL.clear;
+       ADOQuery1.SQL.Add(' select distinct lb from blsj_ctmb where   ksdm=:ksdm and lb=:lb');
+       ADOQuery1.Parameters.ParamByName('ksdm').Value:=pub_ksdm;
+       ADOQuery1.Parameters.ParamByName('lb').Value:=sjlb;
+       ADOQuery1.open;
+       ADOQuery1.first;
+
+ for i := 0 to ADOQuery1.RecordCount - 1 do
+        begin
+         zptext:=trim(ADOQuery1['lb']);
+         Node := TreeView1.items.Add(Node, zptext);
+         ADOQuery1.Next;
+        end;
+        if node<>nil then node.ImageIndex:=1;
+
+       qry_yygf.close;
+       qry_yygf.sql.clear;
+       qry_yygf.SQL.add('select * from blsj_ctmb where ksdm=:ksdm and lb=:lb');
+       qry_yygf.Parameters.ParamByName('ksdm').Value:=pub_ksdm;
+       qry_yygf.Parameters.ParamByName('lb').Value:=sjlb;
+       qry_yygf.Open;
+end;
+
+procedure Tfrm_blsj_bqgcyy.RadioButton2Click(Sender: TObject);
+var
+i:integer;
+begin
+   TreeView1.Items.Clear ;
+       Node := nil;
+       ADOQuery1.close;
+       ADOQuery1.SQL.clear;
+       ADOQuery1.SQL.Add(' select distinct lb from blsj_ctmb where   lb=:lb');
+       ADOQuery1.Parameters.ParamByName('lb').Value:=sjlb;
+       ADOQuery1.open;
+       ADOQuery1.first;
+
+ for i := 0 to ADOQuery1.RecordCount - 1 do
+        begin
+         zptext:=trim(ADOQuery1['lb']);
+         Node := TreeView1.items.Add(Node, zptext);
+         ADOQuery1.Next;
+        end;
+        if node<>nil then node.ImageIndex:=1;
+
+       qry_yygf.close;
+       qry_yygf.sql.clear;
+       qry_yygf.SQL.add('select * from blsj_ctmb where   lb=:lb  ');
+       qry_yygf.Parameters.ParamByName('lb').Value:=sjlb;
+       qry_yygf.Open;
+
+
+end;
+
+procedure Tfrm_blsj_bqgcyy.TreeView1Change(Sender: TObject; Node: TTreeNode);
+var
+aa:string;
+begin
+if RadioButton1.Checked then
+ begin
+  if TreeView1.selected<>nil then
+   begin
+     if TreeView1.selected.text<>'' then
+      begin
+       aa:=trim(TreeView1.selected.text);
+       qry_yygf.close;
+       qry_yygf.sql.clear;
+       qry_yygf.SQL.add('select * from blsj_ctmb where   lb=:lb and ksdm=:ksdm');
+       qry_yygf.Parameters.ParamByName('lb').Value:=aa;
+       qry_yygf.Parameters.ParamByName('ksdm').Value:=pub_ksdm;
+       qry_yygf.Open;
+      end ;
+  end;
+  end
+  else
+   begin
+     if TreeView1.selected<>nil then
+     begin
+      if TreeView1.selected.text<>'' then
+      begin
+       aa:=trim(TreeView1.selected.text);
+       qry_yygf.close;
+       qry_yygf.sql.clear;
+       qry_yygf.SQL.add('select * from blsj_ctmb where  lb=:lb');
+       qry_yygf.Parameters.ParamByName('lb').Value:=aa;
+       qry_yygf.Open;
+      end ;
+    end;
+   end;
+end;
+
+end.

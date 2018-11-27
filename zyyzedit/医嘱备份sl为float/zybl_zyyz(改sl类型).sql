@@ -1,0 +1,1 @@
+alter table zybl_zyyz alter column sl [numeric](18, 2) NOT NULL

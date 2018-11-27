@@ -1,0 +1,30 @@
+object frm_gl: Tfrm_gl
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  Caption = #36807#28388#26465#20214
+  ClientHeight = 21
+  ClientWidth = 426
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object edt_1: TEdit
+    Left = 0
+    Top = 0
+    Width = 426
+    Height = 21
+    Align = alClient
+    TabOrder = 0
+    OnKeyDown = edt_1KeyDown
+    ExplicitLeft = 136
+    ExplicitTop = 24
+    ExplicitWidth = 121
+  end
+end

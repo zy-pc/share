@@ -1,0 +1,51 @@
+object frm_checkError: Tfrm_checkError
+  Left = 186
+  Top = 152
+  Caption = #36923#36753#26816#26597
+  ClientHeight = 282
+  ClientWidth = 461
+  Color = -1
+  DefaultMonitor = dmDesktop
+  Font.Charset = GB2312_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -13
+  Font.Name = #23435#20307
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Memo1: TMemo
+    Left = 0
+    Top = 0
+    Width = 461
+    Height = 257
+    Align = alTop
+    Color = 11433472
+    Font.Charset = GB2312_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = #23435#20307
+    Font.Style = []
+    ImeName = #20013#25991'('#31616#20307') - '#24517#24212' Bing '#36755#20837#27861
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object BitBtn5: TBitBtn
+    Left = 166
+    Top = 260
+    Width = 80
+    Height = 24
+    Caption = #30830#23450'(&O)'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -15
+    Font.Name = #23435#20307
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = BitBtn5Click
+  end
+end
